@@ -8,8 +8,9 @@
       "subheading": "Hello! I'm Hung",
       "headline": "Building <span>scalable</span> solutions with passion",
       "image": "images/bg_1.jpg",
-      "ctaHire": "Contact Me",
-      "ctaCV": "View Portfolio"
+      "ctaHire": "View Portfolio",
+      "ctaCV": "Download CV",
+      "cvFile": "cv/nguyen_manh_hung_nemark.pdf"
     },
     {
       "id": 2,
@@ -19,8 +20,9 @@
       "subheading": "We Design & Build Brands",
       "headline": "Hi, I'm <span>Vy Anh</span> Creating beautiful experiences",
       "image": "images/bg_2.jpg",
-      "ctaHire": "Hire Me",
-      "ctaCV": "Download CV"
+      "ctaHire": "View Portfolio",
+      "ctaCV": "Download CV",
+      "cvFile": "cv/nguyen_vy_anh_nemark.pdf"
     },
     {
       "id": 3,
@@ -30,8 +32,9 @@
       "subheading": "Crafting Modern Interfaces",
       "headline": "I'm <span>Kien</span> Frontend specialist",
       "image": "images/bg_1.jpg",
-      "ctaHire": "Let's Work",
-      "ctaCV": "My Projects"
+      "ctaHire": "View Portfolio",
+      "ctaCV": "Download CV",
+      "cvFile": "cv/tran_trung_kien_nemark.pdf"
     },
     {
       "id": 4,
@@ -41,8 +44,9 @@
       "subheading": "Backend Solutions Expert",
       "headline": "Hi, I'm <span>Quang</span> Building robust systems",
       "image": "images/bg_2.jpg",
-      "ctaHire": "Contact",
-      "ctaCV": "View Work"
+      "ctaHire": "View Portfolio",
+      "ctaCV": "Download CV",
+      "cvFile": "cv/nguyen_dinh_quang_nemark.pdf"
     },
     {
       "id": 5,
@@ -52,8 +56,9 @@
       "subheading": "Optimizing Performance",
       "headline": "I'm <span>Duy</span> Making systems reliable",
       "image": "images/bg_1.jpg",
-      "ctaHire": "Get In Touch",
-      "ctaCV": "Tech Stack"
+      "ctaHire": "View Portfolio",
+      "ctaCV": "Download CV",
+      "cvFile": "cv/le_khanh_duy_nemark.pdf"
     },
     {
       "id": 6,
@@ -63,8 +68,9 @@
       "subheading": "Mobile First Approach",
       "headline": "Hi, I'm <span>Thang</span> Building native apps",
       "image": "images/bg_2.jpg",
-      "ctaHire": "Work With Me",
-      "ctaCV": "App Portfolio"
+      "ctaHire": "View Portfolio",
+      "ctaCV": "Download CV",
+      "cvFile": "cv/vu_cong_thang_nemark.pdf"
     },
     {
       "id": 7,
@@ -74,8 +80,9 @@
       "subheading": "Quality Assurance Expert",
       "headline": "I'm <span>Khai</span> Ensuring product quality",
       "image": "images/bg_1.jpg",
-      "ctaHire": "Contact Me",
-      "ctaCV": "My Process"
+      "ctaHire": "View Portfolio",
+      "ctaCV": "Download CV",
+      "cvFile": "cv/tran_dinh_khai_nemark.pdf"
     }
   ]
 }

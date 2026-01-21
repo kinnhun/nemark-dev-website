@@ -57,7 +57,7 @@
                                 <p class="member-info"><strong>${member.name}</strong> - ${member.role}</p>
                                 <p>
                                     <a href="#contact-section" class="btn btn-primary">${member.ctaHire}</a>
-                                    <a href="#" class="btn btn-primary btn-outline-primary">${member.ctaCV}</a>
+                                    <a href="${member.cvFile}" class="btn btn-primary btn-outline-primary" download>${member.ctaCV}</a>
                                 </p>
                             </div>
                         </div>
