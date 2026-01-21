@@ -1,96 +1,273 @@
 <section class="ftco-section" id="services-section">
+    <style>
+        .services-bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 992px) {
+            .services-bento {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-card {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-bento {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .service-card img {
+            object-fit: contain;
+        }
+
+        /* Card 1 - SEO (Large, spans 2 rows) */
+        .card-seo {
+            grid-column: span 3;
+            grid-row: span 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-seo img {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 1rem;
+        }
+
+        /* Card 2 - Tốc độ (horizontal, icon right) */
+        .card-speed {
+            grid-column: span 4;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-speed .content {
+            flex: 1;
+        }
+
+        .card-speed img {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+        }
+
+        /* Card 3 - Tính năng (horizontal, icon right) */
+        .card-features {
+            grid-column: span 5;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-features .content {
+            flex: 1;
+        }
+
+        .card-features img {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+        }
+
+        /* Card 4 - Bảo mật (horizontal, icon right) */
+        .card-security {
+            grid-column: span 5;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-security .content {
+            flex: 1;
+        }
+
+        .card-security img {
+            width: 90px;
+            height: 90px;
+            flex-shrink: 0;
+        }
+
+        /* Card 5 - Quản trị (icon left, text right) */
+        .card-admin {
+            grid-column: span 4;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-admin img {
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+            order: -1;
+        }
+
+        .card-admin .content {
+            flex: 1;
+            text-align: right;
+        }
+
+        /* Card 6 - Kết nối */
+        .card-connect {
+            grid-column: span 4;
+        }
+
+        .card-connect img {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        /* Card 7 - Nền tảng */
+        .card-platform {
+            grid-column: span 4;
+        }
+
+        .card-platform img {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        /* Card 8 - UI/UX */
+        .card-uiux {
+            grid-column: span 4;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-uiux .content {
+            flex: 1;
+        }
+
+        .card-uiux img {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+        }
+    </style>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 heading-section text-center fadeInUp ftco-animated mb-5">
-                <span class="subheading">I am grat at</span>
-                <h2 class="mb-4">We do awesome services for our clients</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                <span class="subheading">What We Do</span>
+                <h2 class="mb-4">Our Services</h2>
+                <p>We deliver comprehensive solutions to help your business grow and succeed</p>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <div class="media block-6 services d-block bg-white rounded-lg shadow fadeInUp ftco-animated">
-                    <div class="icon d-flex align-items-center justify-content-center"><span
-                            class="flaticon-3d-design"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Web Design</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
-                </div>
+        <div class="services-bento">
+            <!-- Card 1 - SEO (Large) -->
+            <div class="service-card card-seo fadeInUp ftco-animated">
+                <img src="https://cdn-icons-png.flaticon.com/512/2344/2344133.png" alt="SEO">
+                <h3>Chuẩn SEO</h3>
+                <p>Trang web được tối ưu SEO với từ khóa, thẻ meta, URL thân thiện và tối ưu nội dung chất lượng, giúp
+                    đạt thứ hạng cao trên công cụ tìm kiếm.</p>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="media block-6 services d-block bg-white rounded-lg shadow fadeInUp ftco-animated">
-                    <div class="icon shadow d-flex align-items-center justify-content-center"><span
-                            class="flaticon-app-development"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Web Application</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="media block-6 services d-block bg-white rounded-lg shadow fadeInUp ftco-animated">
-                    <div class="icon shadow d-flex align-items-center justify-content-center"><span
-                            class="flaticon-web-programming"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Web Development</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="media block-6 services d-block bg-white rounded-lg shadow fadeInUp ftco-animated">
-                    <div class="icon shadow d-flex align-items-center justify-content-center"><span
-                            class="flaticon-branding"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Banner Design</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <div class="media block-6 services d-block bg-white rounded-lg shadow fadeInUp ftco-animated">
-                    <div class="icon shadow d-flex align-items-center justify-content-center"><span
-                            class="flaticon-computer"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Branding</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
+            <!-- Card 2 - Tốc độ -->
+            <div class="service-card card-speed fadeInUp ftco-animated">
+                <div class="content">
+                    <h3>Tốc độ</h3>
+                    <p>Tối ưu hình ảnh và tốc độ tải trang nhanh, giảm thiểu JavaScript/CSS và sử dụng CDN, cải thiện
+                        trải nghiệm người dùng.</p>
                 </div>
+                <img src="https://cdn-icons-png.flaticon.com/512/4727/4727266.png" alt="Speed">
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="media block-6 services d-block bg-white rounded-lg shadow fadeInUp ftco-animated">
-                    <div class="icon shadow d-flex align-items-center justify-content-center"><span
-                            class="flaticon-vector"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Icon Design</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
+
+            <!-- Card 3 - Tính năng -->
+            <div class="service-card card-features fadeInUp ftco-animated">
+                <div class="content">
+                    <h3>Tính năng đa dạng</h3>
+                    <p>Tích hợp hệ thống thương mại điện tử, thanh toán trực tuyến, tìm kiếm nâng cao tăng cường tương
+                        tác.</p>
                 </div>
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135691.png" alt="Features">
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="media block-6 services d-block bg-white rounded-lg shadow fadeInUp ftco-animated">
-                    <div class="icon shadow d-flex align-items-center justify-content-center"><span
-                            class="flaticon-vector"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">Graphic Design</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
+
+            <!-- Card 4 - Bảo mật -->
+            <div class="service-card card-security fadeInUp ftco-animated">
+                <div class="content">
+                    <h3>Bảo mật tuyệt đối</h3>
+                    <p>Bảo vệ dữ liệu người dùng với công nghệ HTTPS, ngăn chặn tấn công mạng bằng biện pháp tường lửa
+                        và IDS.</p>
                 </div>
+                <img src="https://cdn-icons-png.flaticon.com/512/6195/6195699.png" alt="Security">
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="media block-6 services d-block bg-white rounded-lg shadow fadeInUp ftco-animated">
-                    <div class="icon shadow d-flex align-items-center justify-content-center"><span
-                            class="flaticon-zoom"></span></div>
-                    <div class="media-body">
-                        <h3 class="heading mb-3">SEO</h3>
-                        <p>A small river named Duden flows by their place and supplies.</p>
-                    </div>
+
+            <!-- Card 5 - Quản trị -->
+            <div class="service-card card-admin fadeInUp ftco-animated">
+                <div class="content">
+                    <h3>Dễ dàng quản trị</h3>
+                    <p>Hệ thống quản trị nội dung linh hoạt, dễ sử dụng, giúp cập nhật thông tin và tương tác hiệu quả
+                        với khách hàng.</p>
                 </div>
+                <img src="https://cdn-icons-png.flaticon.com/512/4703/4703683.png" alt="Admin">
+            </div>
+
+            <!-- Card 6 - Kết nối -->
+            <div class="service-card card-connect fadeInUp ftco-animated">
+                <img src="https://cdn-icons-png.flaticon.com/512/3178/3178158.png" alt="Connect">
+                <h3>Kết nối</h3>
+                <p>Kết nối mạng xã hội mở rộng khả năng tiếp cận khách hàng, tăng truy cập tự nhiên và thúc đẩy kinh
+                    doanh.</p>
+            </div>
+
+            <!-- Card 7 - Nền tảng -->
+            <div class="service-card card-platform fadeInUp ftco-animated">
+                <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Platform">
+                <h3>Nền tảng</h3>
+                <p>Chọn nền tảng WordPress với kho giao diện và plugin đa dạng, khả năng mở rộng cao, đảm bảo trải
+                    nghiệm tiện lợi.</p>
+            </div>
+
+            <!-- Card 8 - UI/UX -->
+            <div class="service-card card-uiux fadeInUp ftco-animated">
+                <div class="content">
+                    <h3>Chuẩn UI/UX</h3>
+                    <p>Thiết kế UX/UI thẩm mỹ, tạo ấn tượng, tương thích mọi thiết bị, nâng cao trải nghiệm người dùng
+                        lâu hơn.</p>
+                </div>
+                <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="UI/UX">
             </div>
         </div>
     </div>
