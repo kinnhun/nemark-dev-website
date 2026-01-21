@@ -135,11 +135,71 @@
         }
     }
 
+    // Initialize progress circles (for dynamically loaded content)
+    function initProgressCircles() {
+        if (typeof $ === 'undefined') return;
+
+        function percentageToDegrees(percentage) {
+            return percentage / 100 * 360;
+        }
+
+        $(".progress").each(function () {
+            var value = $(this).attr('data-value');
+            var left = $(this).find('.progress-left .progress-bar');
+            var right = $(this).find('.progress-right .progress-bar');
+
+            if (value > 0) {
+                if (value <= 50) {
+                    right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)');
+                } else {
+                    right.css('transform', 'rotate(180deg)');
+                    left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)');
+                }
+            }
+        });
+    }
+
     // Initialize on DOM ready
     document.addEventListener('DOMContentLoaded', async function () {
         // Load header and footer (don't wait)
         loadInclude('header-placeholder', 'header.html');
         loadInclude('footer-placeholder', 'footer.html');
+        loadInclude('counter-placeholder', 'counter.html');
+        loadInclude('about-placeholder', 'about.html');
+
+        // Load skills and THEN init progress circles
+        const skillsLoaded = await loadInclude('skills-placeholder', 'skills.html');
+        if (skillsLoaded) {
+            initProgressCircles();
+        }
+
+        // Load services
+        loadInclude('services-placeholder', 'services.html');
+        loadInclude('hireme-placeholder', 'hireme.html');
+        loadInclude('projects-placeholder', 'projects.html');
+        loadInclude('blog-placeholder', 'blog.html');
+        loadInclude('contact-placeholder', 'contact.html');
+
+        // Load testimony and THEN init carousel
+        const testimonyLoaded = await loadInclude('testimony-placeholder', 'testimony.html');
+        if (testimonyLoaded && typeof $ !== 'undefined' && $.fn.owlCarousel) {
+            $('.carousel-testimony').owlCarousel({
+                center: true,
+                loop: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                items: 1,
+                margin: 30,
+                stagePadding: 0,
+                nav: false,
+                navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+        }
 
         // Load hero and THEN load team data
         const heroLoaded = await loadInclude('hero-placeholder', 'hero.html');
