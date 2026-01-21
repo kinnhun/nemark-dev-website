@@ -1,0 +1,81 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "Nguyễn Mạnh Hùng",
+      "role": "Team Lead",
+      "specialty": "Full-Stack Developer",
+      "subheading": "Hello! I'm Hung",
+      "headline": "Building <span>scalable</span> solutions with passion",
+      "image": "images/bg_1.jpg",
+      "ctaHire": "Contact Me",
+      "ctaCV": "View Portfolio"
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Vy Anh",
+      "role": "UI/UX Designer",
+      "specialty": "Creative Designer",
+      "subheading": "We Design & Build Brands",
+      "headline": "Hi, I'm <span>Vy Anh</span> Creating beautiful experiences",
+      "image": "images/bg_2.jpg",
+      "ctaHire": "Hire Me",
+      "ctaCV": "Download CV"
+    },
+    {
+      "id": 3,
+      "name": "Trần Trung Kiên",
+      "role": "Frontend Developer",
+      "specialty": "React & Next.js Expert",
+      "subheading": "Crafting Modern Interfaces",
+      "headline": "I'm <span>Kien</span> Frontend specialist",
+      "image": "images/bg_1.jpg",
+      "ctaHire": "Let's Work",
+      "ctaCV": "My Projects"
+    },
+    {
+      "id": 4,
+      "name": "Nguyễn Đình Quang",
+      "role": "Backend Developer",
+      "specialty": "Node.js & Database",
+      "subheading": "Backend Solutions Expert",
+      "headline": "Hi, I'm <span>Quang</span> Building robust systems",
+      "image": "images/bg_2.jpg",
+      "ctaHire": "Contact",
+      "ctaCV": "View Work"
+    },
+    {
+      "id": 5,
+      "name": "Lê Khánh Duy",
+      "role": "DevOps Engineer",
+      "specialty": "Cloud & Infrastructure",
+      "subheading": "Optimizing Performance",
+      "headline": "I'm <span>Duy</span> Making systems reliable",
+      "image": "images/bg_1.jpg",
+      "ctaHire": "Get In Touch",
+      "ctaCV": "Tech Stack"
+    },
+    {
+      "id": 6,
+      "name": "Vũ Công Thắng",
+      "role": "Mobile Developer",
+      "specialty": "React Native",
+      "subheading": "Mobile First Approach",
+      "headline": "Hi, I'm <span>Thang</span> Building native apps",
+      "image": "images/bg_2.jpg",
+      "ctaHire": "Work With Me",
+      "ctaCV": "App Portfolio"
+    },
+    {
+      "id": 7,
+      "name": "Trần Đình Khải",
+      "role": "QA Engineer",
+      "specialty": "Testing & Quality",
+      "subheading": "Quality Assurance Expert",
+      "headline": "I'm <span>Khai</span> Ensuring product quality",
+      "image": "images/bg_1.jpg",
+      "ctaHire": "Contact Me",
+      "ctaCV": "My Process"
+    }
+  ]
+}
