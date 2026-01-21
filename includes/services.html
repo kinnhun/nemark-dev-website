@@ -44,6 +44,11 @@
             font-weight: 600;
             color: #000;
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover h3 {
+            color: #7c3aed;
         }
 
         .service-card p {
@@ -76,6 +81,7 @@
             grid-column: span 4;
             display: flex;
             align-items: flex-start;
+
             gap: 1rem;
         }
 
@@ -148,23 +154,37 @@
         /* Card 6 - Kết nối */
         .card-connect {
             grid-column: span 4;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-connect .content {
+            flex: 1;
         }
 
         .card-connect img {
-            width: 100%;
-            height: 100px;
-            margin-bottom: 1rem;
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
         }
 
         /* Card 7 - Nền tảng */
         .card-platform {
             grid-column: span 4;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-platform .content {
+            flex: 1;
         }
 
         .card-platform img {
-            width: 100%;
-            height: 100px;
-            margin-bottom: 1rem;
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
         }
 
         /* Card 8 - UI/UX */
@@ -180,8 +200,8 @@
         }
 
         .card-uiux img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             flex-shrink: 0;
         }
     </style>
@@ -198,7 +218,7 @@
         <div class="services-bento">
             <!-- Card 1 - SEO (Large) -->
             <div class="service-card card-seo fadeInUp ftco-animated">
-                <img src="https://cdn-icons-png.flaticon.com/512/2344/2344133.png" alt="SEO">
+                <img src="https://img.icons8.com/color/200/combo-chart--v1.png" alt="SEO">
                 <h3>Chuẩn SEO</h3>
                 <p>Trang web được tối ưu SEO với từ khóa, thẻ meta, URL thân thiện và tối ưu nội dung chất lượng, giúp
                     đạt thứ hạng cao trên công cụ tìm kiếm.</p>
@@ -211,7 +231,7 @@
                     <p>Tối ưu hình ảnh và tốc độ tải trang nhanh, giảm thiểu JavaScript/CSS và sử dụng CDN, cải thiện
                         trải nghiệm người dùng.</p>
                 </div>
-                <img src="https://cdn-icons-png.flaticon.com/512/4727/4727266.png" alt="Speed">
+                <img src="https://img.icons8.com/color/96/speed.png" alt="Speed">
             </div>
 
             <!-- Card 3 - Tính năng -->
@@ -221,7 +241,7 @@
                     <p>Tích hợp hệ thống thương mại điện tử, thanh toán trực tuyến, tìm kiếm nâng cao tăng cường tương
                         tác.</p>
                 </div>
-                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135691.png" alt="Features">
+                <img src="https://img.icons8.com/color/96/module.png" alt="Features">
             </div>
 
             <!-- Card 4 - Bảo mật -->
@@ -231,7 +251,7 @@
                     <p>Bảo vệ dữ liệu người dùng với công nghệ HTTPS, ngăn chặn tấn công mạng bằng biện pháp tường lửa
                         và IDS.</p>
                 </div>
-                <img src="https://cdn-icons-png.flaticon.com/512/6195/6195699.png" alt="Security">
+                <img src="https://img.icons8.com/color/96/security-checked--v1.png" alt="Security">
             </div>
 
             <!-- Card 5 - Quản trị -->
@@ -241,23 +261,27 @@
                     <p>Hệ thống quản trị nội dung linh hoạt, dễ sử dụng, giúp cập nhật thông tin và tương tác hiệu quả
                         với khách hàng.</p>
                 </div>
-                <img src="https://cdn-icons-png.flaticon.com/512/4703/4703683.png" alt="Admin">
+                <img src="https://img.icons8.com/color/96/settings--v1.png" alt="Admin">
             </div>
 
             <!-- Card 6 - Kết nối -->
             <div class="service-card card-connect fadeInUp ftco-animated">
-                <img src="https://cdn-icons-png.flaticon.com/512/3178/3178158.png" alt="Connect">
-                <h3>Kết nối</h3>
-                <p>Kết nối mạng xã hội mở rộng khả năng tiếp cận khách hàng, tăng truy cập tự nhiên và thúc đẩy kinh
-                    doanh.</p>
+                <div class="content">
+                    <h3>Kết nối</h3>
+                    <p>Kết nối mạng xã hội mở rộng khả năng tiếp cận khách hàng, tăng truy cập tự nhiên và thúc đẩy kinh
+                        doanh.</p>
+                </div>
+                <img src="https://img.icons8.com/color/96/connected-people.png" alt="Connect">
             </div>
 
             <!-- Card 7 - Nền tảng -->
             <div class="service-card card-platform fadeInUp ftco-animated">
-                <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Platform">
-                <h3>Nền tảng</h3>
-                <p>Chọn nền tảng WordPress với kho giao diện và plugin đa dạng, khả năng mở rộng cao, đảm bảo trải
-                    nghiệm tiện lợi.</p>
+                <div class="content">
+                    <h3>Nền tảng</h3>
+                    <p>Chọn nền tảng WordPress với kho giao diện và plugin đa dạng, khả năng mở rộng cao, đảm bảo trải
+                        nghiệm tiện lợi.</p>
+                </div>
+                <img src="https://img.icons8.com/color/96/stack-of-photos--v1.png" alt="Platform">
             </div>
 
             <!-- Card 8 - UI/UX -->
@@ -267,7 +291,7 @@
                     <p>Thiết kế UX/UI thẩm mỹ, tạo ấn tượng, tương thích mọi thiết bị, nâng cao trải nghiệm người dùng
                         lâu hơn.</p>
                 </div>
-                <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="UI/UX">
+                <img src="https://img.icons8.com/color/96/web-design.png" alt="UI/UX">
             </div>
         </div>
     </div>
