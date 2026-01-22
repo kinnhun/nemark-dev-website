@@ -7,7 +7,7 @@
       "specialty": "Full-Stack Developer",
       "subheading": "Hello! I'm Hung",
       "headline": "Building <span>scalable</span> solutions with passion",
-      "image": "images/bg_1.jpg",
+      "image": "images/bg-hero/hung.jpg",
       "ctaHire": "View Portfolio",
       "ctaCV": "Download CV",
       "cvFile": "cv/nguyen_manh_hung_nemark.pdf"
@@ -19,7 +19,7 @@
       "specialty": "Creative Designer",
       "subheading": "We Design & Build Brands",
       "headline": "Hi, I'm <span>Vy Anh</span> Creating beautiful experiences",
-      "image": "images/bg_2.jpg",
+      "image": "images/bg-hero/vianh.png",
       "ctaHire": "View Portfolio",
       "ctaCV": "Download CV",
       "cvFile": "cv/nguyen_vy_anh_nemark.pdf"
@@ -31,7 +31,7 @@
       "specialty": "React & Next.js Expert",
       "subheading": "Crafting Modern Interfaces",
       "headline": "I'm <span>Kien</span> Frontend specialist",
-      "image": "images/bg_1.jpg",
+      "image": "images/bg-hero/kien.png",
       "ctaHire": "View Portfolio",
       "ctaCV": "Download CV",
       "cvFile": "cv/tran_trung_kien_nemark.pdf"
@@ -43,7 +43,7 @@
       "specialty": "Node.js & Database",
       "subheading": "Backend Solutions Expert",
       "headline": "Hi, I'm <span>Quang</span> Building robust systems",
-      "image": "images/bg_2.jpg",
+      "image": "images/bg-hero/quang.png",
       "ctaHire": "View Portfolio",
       "ctaCV": "Download CV",
       "cvFile": "cv/nguyen_dinh_quang_nemark.pdf"
@@ -55,7 +55,7 @@
       "specialty": "Cloud & Infrastructure",
       "subheading": "Optimizing Performance",
       "headline": "I'm <span>Duy</span> Making systems reliable",
-      "image": "images/bg_1.jpg",
+      "image": "images/bg-hero/duy.png",
       "ctaHire": "View Portfolio",
       "ctaCV": "Download CV",
       "cvFile": "cv/le_khanh_duy_nemark.pdf"
@@ -67,7 +67,7 @@
       "specialty": "React Native",
       "subheading": "Mobile First Approach",
       "headline": "Hi, I'm <span>Thang</span> Building native apps",
-      "image": "images/bg_2.jpg",
+      "image": "images/bg-hero/thang.png",
       "ctaHire": "View Portfolio",
       "ctaCV": "Download CV",
       "cvFile": "cv/vu_cong_thang_nemark.pdf"
@@ -79,7 +79,7 @@
       "specialty": "Testing & Quality",
       "subheading": "Quality Assurance Expert",
       "headline": "I'm <span>Khai</span> Ensuring product quality",
-      "image": "images/bg_1.jpg",
+      "image": "images/bg-hero/khai.png",
       "ctaHire": "View Portfolio",
       "ctaCV": "Download CV",
       "cvFile": "cv/tran_dinh_khai_nemark.pdf"
