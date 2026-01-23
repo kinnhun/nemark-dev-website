@@ -12999,6 +12999,18 @@ h5,
   position: relative;
 }
 
+.testimony-section .owl-carousel .owl-stage {
+  display: flex !important;
+}
+
+.testimony-section .owl-carousel .owl-item {
+  display: flex;
+}
+
+.testimony-section .owl-carousel .item {
+  height: 100%;
+}
+
 .testimony-section .owl-nav {
   position: absolute;
   top: 100%;
@@ -13081,7 +13093,8 @@ h5,
 }
 
 .testimony-wrap {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
   background: white;
   padding: 0 20px;
@@ -13090,6 +13103,17 @@ h5,
   -moz-box-shadow: 0px 5px 21px -14px rgba(0, 0, 0, 0.14);
   box-shadow: 0px 5px 21px -14px rgba(0, 0, 0, 0.14);
   border-radius: 5px;
+  height: 100%;
+}
+
+.testimony-wrap .text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.testimony-wrap .text p.mb-4 {
+  flex-grow: 1;
 }
 
 .testimony-wrap .user-img {

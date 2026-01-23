@@ -1,93 +1,170 @@
-<section class="ftco-section ftco-project" id="projects-section">
-    <div class="container-fluid px-md-4">
-        <div class="row justify-content-center pb-5">
-            <div class="col-md-12 heading-section text-center fadeInUp ftco-animated">
-                <span class="subheading">Accomplishments</span>
-                <h2 class="mb-4">Our Projects</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+<section class="ftco-section ftco-project" id="projects-section" style="padding: 0;">
+    <style>
+        .projects-wrapper {
+            background: #f8f9fa;
+            overflow: hidden;
+            position: relative;
+            height: 800px;
+        }
+
+        .tilted-grid-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-12deg);
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Vertical columns */
+        .grid-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            will-change: transform;
+        }
+
+        .grid-item {
+            flex-shrink: 0;
+            width: 320px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.06);
+        }
+
+        @media (max-width: 1400px) {
+            .projects-wrapper {
+                height: 700px;
+            }
+
+            .grid-item {
+                width: 280px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .projects-wrapper {
+                height: 600px;
+            }
+
+            .grid-item {
+                width: 240px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .projects-wrapper {
+                height: 500px;
+            }
+
+            .tilted-grid-container {
+                transform: translate(-50%, -50%) rotate(-10deg);
+            }
+
+            .grid-item {
+                width: 200px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-wrapper {
+                height: 400px;
+            }
+
+            .tilted-grid-container {
+                transform: translate(-50%, -50%) rotate(-8deg);
+            }
+
+            .grid-item {
+                width: 160px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .projects-wrapper {
+                height: 320px;
+            }
+
+            .tilted-grid-container {
+                transform: translate(-50%, -50%) rotate(-6deg);
+            }
+
+            .grid-item {
+                width: 120px;
+                height: 150px;
+            }
+        }
+    </style>
+
+    <div class="projects-wrapper">
+        <div class="tilted-grid-container">
+
+            <!-- Column 1 -->
+            <div class="grid-column">
+                <div class="grid-item"><img alt="Project" src="images/project/design/page1.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page2.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page3.png"></div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="project img shadow fadeInUp ftco-animated d-flex justify-content-center align-items-center"
-                    style="background-image: url(images/work-1.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
+
+            <!-- Column 2 -->
+            <div class="grid-column">
+                <div class="grid-item"><img alt="Project" src="images/project/design/page4.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page5.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page6.png"></div>
             </div>
-            <div class="col-md-3">
-                <div class="project img shadow fadeInUp ftco-animated d-flex justify-content-center align-items-center"
-                    style="background-image: url(images/work-2.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
+
+            <!-- Column 3 -->
+            <div class="grid-column">
+                <div class="grid-item"><img alt="Project" src="images/project/design/page7.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page8.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page9.png"></div>
             </div>
-            <div class="col-md-3">
-                <div class="project img shadow fadeInUp ftco-animated d-flex justify-content-center align-items-center"
-                    style="background-image: url(images/work-3.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
+
+            <!-- Column 4 -->
+            <div class="grid-column">
+                <div class="grid-item"><img alt="Project" src="images/project/design/page10.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page1.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page2.png"></div>
             </div>
-            <div class="col-md-3">
-                <div class="project img shadow fadeInUp ftco-animated d-flex justify-content-center align-items-center"
-                    style="background-image: url(images/work-4.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
+
+            <!-- Column 5 -->
+            <div class="grid-column">
+                <div class="grid-item"><img alt="Project" src="images/project/design/page3.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page4.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page5.png"></div>
             </div>
-            <div class="col-md-3">
-                <div class="project img shadow fadeInUp ftco-animated d-flex justify-content-center align-items-center"
-                    style="background-image: url(images/work-5.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
+
+            <!-- Column 6 -->
+            <div class="grid-column">
+                <div class="grid-item"><img alt="Project" src="images/project/design/page6.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page7.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page8.png"></div>
             </div>
-            <div class="col-md-3">
-                <div class="project img shadow fadeInUp ftco-animated d-flex justify-content-center align-items-center"
-                    style="background-image: url(images/work-6.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
+
+            <!-- Column 7 -->
+            <div class="grid-column">
+                <div class="grid-item"><img alt="Project" src="images/project/design/page9.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page10.png"></div>
+                <div class="grid-item"><img alt="Project" src="images/project/design/page1.png"></div>
             </div>
-            <div class="col-md-3">
-                <div class="project img shadow fadeInUp ftco-animated d-flex justify-content-center align-items-center"
-                    style="background-image: url(images/work-7.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="project img shadow fadeInUp ftco-animated d-flex justify-content-center align-items-center"
-                    style="background-image: url(images/work-8.jpg);">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

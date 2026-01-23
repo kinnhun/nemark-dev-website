@@ -159,6 +159,35 @@
         });
     }
 
+    // Initialize projects parallax scroll effect
+    function initProjectsParallax() {
+        const columns = document.querySelectorAll('.grid-column');
+        const projectsSection = document.querySelector('#projects-section');
+
+        if (!columns.length || !projectsSection) return;
+
+        function handleScroll() {
+            const rect = projectsSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Only animate when section is visible
+            if (rect.bottom > 0 && rect.top < windowHeight) {
+                const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+
+                columns.forEach((column, index) => {
+                    // Alternate directions: odd columns go up, even go down
+                    const direction = index % 2 === 0 ? 1 : -1;
+                    const speed = 0.3 + (index % 3) * 0.15; // Vary speed slightly
+                    const yOffset = (scrollProgress - 0.5) * 400 * speed * direction;
+                    column.style.transform = `translateY(${yOffset}px)`;
+                });
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Initial call
+    }
+
     // Initialize on DOM ready
     document.addEventListener('DOMContentLoaded', async function () {
         // Load header and footer (don't wait)
@@ -176,7 +205,13 @@
         // Load services
         loadInclude('services-placeholder', 'services.html');
         loadInclude('hireme-placeholder', 'hireme.html');
-        loadInclude('projects-placeholder', 'projects.html');
+
+        // Load projects and init parallax
+        const projectsLoaded = await loadInclude('projects-placeholder', 'projects.html');
+        if (projectsLoaded) {
+            initProjectsParallax();
+        }
+
         loadInclude('blog-placeholder', 'blog.html');
         loadInclude('contact-placeholder', 'contact.html');
 
