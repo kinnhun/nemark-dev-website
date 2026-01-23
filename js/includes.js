@@ -85,7 +85,7 @@
                                 <h1 class="mb-4 mt-3">${member.headline}</h1>
                                 <p class="member-info"><strong>${member.name}</strong> - ${member.role}</p>
                                 <p>
-                                    <a href="#contact-section" class="btn btn-primary">${member.ctaHire}</a>
+                                    <a href="${member.portfolioLink}" class="btn btn-primary">${member.ctaHire}</a>
                                     <a href="${member.cvFile}" class="btn btn-primary btn-outline-primary" download>${member.ctaCV}</a>
                                 </p>
                             </div>
