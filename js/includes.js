@@ -15,7 +15,7 @@
         return '../'.repeat(depth);
     }
 
-    // Load HTML content into element
+    // Load HTML content into element and fix relative paths
     async function loadInclude(elementId, file) {
         const element = document.getElementById(elementId);
         if (!element) return false;
@@ -26,7 +26,36 @@
         try {
             const response = await fetch(url);
             if (response.ok) {
-                const html = await response.text();
+                let html = await response.text();
+
+                // Rewrite relative paths if we are in a subdirectory (basePath is not empty)
+                if (basePath) {
+                    // Create a temporary container to parse HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+
+                    // Fix hrefs
+                    const links = tempDiv.querySelectorAll('[href]');
+                    links.forEach(link => {
+                        const href = link.getAttribute('href');
+                        // Rewrite only if it's a relative path and doesn't start with http, //, #, mailto:
+                        if (href && !href.match(/^(http|\/\/|#|mailto:|\/)/)) {
+                            link.setAttribute('href', basePath + href);
+                        }
+                    });
+
+                    // Fix srcs
+                    const images = tempDiv.querySelectorAll('[src]');
+                    images.forEach(img => {
+                        const src = img.getAttribute('src');
+                        if (src && !src.match(/^(http|\/\/|\/|data:)/)) {
+                            img.setAttribute('src', basePath + src);
+                        }
+                    });
+
+                    html = tempDiv.innerHTML;
+                }
+
                 element.innerHTML = html;
                 return true;
             } else {
