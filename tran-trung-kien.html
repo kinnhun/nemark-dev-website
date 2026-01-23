@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>Trần Trung Kiên - Frontend Developer | Nemark Dev</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colors.css">
+
+    <style>
+        /* ===== CV PAGE SPECIFIC STYLES ===== */
+        :root {
+            --cv-primary: #39A2E1;
+            --cv-primary-light: #E8F4FD;
+            --cv-bg: #F0F4F8;
+            --cv-white: #FFFFFF;
+            --cv-dark: #1a1a2e;
+            --cv-text: #4a4a4a;
+            --cv-text-light: #6b7280;
+        }
+
+        .cv-page-content {
+            background: var(--cv-bg);
+        }
+
+        /* Breadcrumb */
+        .cv-breadcrumb {
+            padding: 15px 0;
+            font-size: 14px;
+            color: var(--cv-text-light);
+            background: var(--cv-bg);
+        }
+
+        .cv-breadcrumb a {
+            color: var(--cv-text-light);
+            text-decoration: none;
+        }
+
+        .cv-breadcrumb a:hover {
+            color: var(--cv-primary);
+        }
+
+        /* Section Styles */
+        .cv-section {
+            padding: 60px 0;
+            background: var(--cv-bg);
+        }
+
+        .cv-section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .cv-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--cv-primary);
+            border-radius: 2px;
+        }
+
+        /* Two Column Layout */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Card Styles */
+        .cv-card {
+            background: var(--cv-white);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Education Card */
+        .cv-education-card {
+            padding: 25px 30px;
+        }
+
+        .cv-education-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .cv-education-card .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--cv-primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cv-education-card .icon i {
+            font-size: 24px;
+            color: var(--cv-primary);
+        }
+
+        .cv-education-card .header-text h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 3px;
+        }
+
+        .cv-education-card .header-text .school {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-primary);
+            margin: 0;
+        }
+
+        .cv-education-card .major {
+            font-size: 15px;
+            color: var(--cv-text);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cv-education-card .meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--cv-text-light);
+        }
+
+        .cv-education-card .meta .divider {
+            width: 1px;
+            height: 20px;
+            background: #ddd;
+        }
+
+        .cv-education-card .meta .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cv-education-card .meta .icons i {
+            color: var(--cv-primary);
+            font-size: 16px;
+        }
+
+        .cv-education-card .gpa {
+            font-weight: 600;
+            color: var(--cv-dark);
+        }
+
+        /* Timeline */
+        .cv-timeline {
+            position: relative;
+        }
+
+        .cv-timeline-item {
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            border-left: 2px solid var(--cv-primary-light);
+        }
+
+        .cv-timeline-item:last-child {
+            padding-bottom: 0;
+            border-left-color: transparent;
+        }
+
+        .cv-timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--cv-primary);
+            border-radius: 50%;
+        }
+
+        .cv-timeline-item .date {
+            font-size: 13px;
+            color: var(--cv-primary);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .cv-timeline-item h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-timeline-item .company {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--cv-text-light);
+            margin-bottom: 15px;
+        }
+
+        .cv-timeline-item .company i {
+            color: var(--cv-primary);
+        }
+
+        .cv-timeline-item ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .cv-timeline-item ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--cv-text);
+            line-height: 1.6;
+        }
+
+        .cv-timeline-item ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--cv-primary);
+            font-weight: 600;
+        }
+
+        /* Skills Grid */
+        .cv-skills-card {
+            padding: 25px;
+        }
+
+        .cv-skills-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 20px;
+        }
+
+        .cv-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .cv-skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--cv-text);
+        }
+
+        .cv-skill-item i {
+            width: 32px;
+            height: 32px;
+            background: var(--cv-primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cv-primary);
+            font-size: 16px;
+        }
+
+        .cv-skill-item strong {
+            color: var(--cv-dark);
+        }
+
+        .cv-github-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .cv-github-link i {
+            color: var(--cv-primary);
+        }
+
+        .cv-github-link a {
+            color: var(--cv-primary);
+            text-decoration: none;
+        }
+
+        /* Project Card */
+        .cv-project-card {
+            background: var(--cv-white);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cv-project-card .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .cv-project-card .date {
+            font-size: 13px;
+            color: var(--cv-primary);
+            font-weight: 500;
+        }
+
+        .cv-project-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-project-card .role {
+            font-size: 14px;
+            color: var(--cv-text-light);
+            margin-bottom: 15px;
+        }
+
+        .cv-project-card .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cv-project-card .tech-tag {
+            background: var(--cv-primary-light);
+            color: var(--cv-primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .cv-project-card .description {
+            font-size: 14px;
+            color: var(--cv-text);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .cv-project-card .links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .cv-project-card .links a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--cv-primary);
+            text-decoration: none;
+        }
+
+        .cv-project-card .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Soft Skills */
+        .cv-soft-skill {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .cv-soft-skill .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--cv-primary-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cv-soft-skill .icon i {
+            color: var(--cv-primary);
+            font-size: 18px;
+        }
+
+        .cv-soft-skill h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-soft-skill p {
+            font-size: 13px;
+            color: var(--cv-text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Footer CTA */
+        .cv-footer {
+            background: var(--cv-white);
+            padding: 40px 0;
+        }
+
+        .cv-footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cv-footer-left h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--cv-dark);
+            margin-bottom: 10px;
+        }
+
+        .cv-footer-left p {
+            font-size: 16px;
+            color: var(--cv-text);
+            margin-bottom: 20px;
+        }
+
+        .cv-footer-right {
+            background: var(--cv-primary-light);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cv-footer-right .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cv-footer-right .info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-footer-right .info .role {
+            font-size: 14px;
+            color: var(--cv-text-light);
+            margin-bottom: 10px;
+        }
+
+        .cv-footer-right .contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .cv-footer-right .contacts a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cv-text);
+            text-decoration: none;
+        }
+
+        .cv-footer-right .contacts i {
+            color: var(--cv-primary);
+        }
+
+        @media (max-width: 768px) {
+            .cv-footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .cv-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
+        id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Nemark<span>.</span></a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+                data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><span>Trang Chủ</span></a></li>
+                    <li class="nav-item"><a href="index.html#about-section" class="nav-link"><span>Về Chúng
+                                Tôi</span></a></li>
+                    <li class="nav-item"><a href="index.html#skills-section" class="nav-link"><span>Công Nghệ</span></a>
+                    </li>
+                    <li class="nav-item"><a href="index.html#projects-section" class="nav-link"><span>Dự Án</span></a>
+                    </li>
+                    <li class="nav-item"><a href="index.html#contact-section" class="nav-link"><span>Liên hệ</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home-section" class="hero">
+        <div class="home-slider owl-carousel">
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container-fluid px-md-0">
+                    <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+                        data-scrollax-parent="true">
+                        <div class="one-third order-md-last img" style="background-image:url(images/bg-hero/kien.png);">
+                            <div class="overlay"></div>
+                            <div class="overlay-1"></div>
+                        </div>
+                        <div class="one-forth d-flex align-items-center fadeInUp ftco-animated"
+                            data-scrollax=" properties: { translateY: '70%' }">
+                            <div class="text">
+                                <span class="subheading">Hello! I'm</span>
+                                <h1 class="mb-4 mt-3">Trần Trung <span>Kiên</span></h1>
+                                <p class="member-info"><strong>Frontend Developer</strong> (Junior Developer)</p>
+                                <p>React/Next.js • Full-Stack • CI/CD & Testing</p>
+                                <p>
+                                    <a href="cv/tran_trung_kien_nemark.pdf" class="btn btn-primary btn-outline-primary"
+                                        download>Download CV</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Page Content -->
+    <div class="cv-page-content">
+
+        <!-- Breadcrumb -->
+        <div class="cv-breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a> &gt; Trần Trung Kiên
+            </div>
+        </div>
+
+        <!-- About Me + Education -->
+        <section class="cv-section">
+            <div class="container">
+                <div class="cv-grid">
+                    <!-- About Me -->
+                    <div>
+                        <h2 class="cv-section-title">About Me</h2>
+                        <p style="color: var(--cv-text); line-height: 1.8; font-size: 15px;">
+                            I aim to grow my career as a Fullstack Developer, specializing in
+                            React/Next.js, optimizing user experience, performance, and code
+                            quality through writing unit tests and automation tests, while also
+                            contributing to the development of robust and flexible backend systems.
+                        </p>
+                    </div>
+
+                    <!-- Education Card -->
+                    <div class="cv-card cv-education-card">
+                        <div class="cv-education-header">
+                            <div class="icon">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                            <div class="header-text">
+                                <h3>Education</h3>
+                                <p class="school">FPT University</p>
+                            </div>
+                        </div>
+                        <p class="major"><strong>Major:</strong> Software Engineering</p>
+                        <div class="meta">
+                            <span>2020 - 2025</span>
+                            <span class="divider"></span>
+                            <span class="icons">
+                                <i class="fa fa-book"></i>
+                                <i class="fa fa-users"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills (FULL WIDTH) + Work Experience -->
+        <section class="cv-section" style="padding-top: 0;">
+            <div class="container">
+                <!-- Technical Skills - Full Width Card -->
+                <div class="cv-card cv-skills-card" style="margin-bottom: 40px;">
+                    <h3>Technical Skills</h3>
+                    <div class="cv-skills-grid" style="grid-template-columns: repeat(4, 1fr);">
+                        <div class="cv-skill-item">
+                            <i class="fa fa-code"></i>
+                            <span><strong>React.js</strong> (Redux, Router)</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-rocket"></i>
+                            <span><strong>Next.js</strong></span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-google"></i>
+                            <span><strong>Angular</strong></span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-file-code-o"></i>
+                            <span><strong>TypeScript</strong>, JavaScript</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-html5"></i>
+                            <span>HTML5, CSS3, SASS</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-paint-brush"></i>
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-server"></i>
+                            <span><strong>Node.js</strong>, Express.js</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-windows"></i>
+                            <span><strong>.NET</strong>, PHP, JSP/Servlet</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-database"></i>
+                            <span>MongoDB, MySQL, SQL Server</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-check-square-o"></i>
+                            <span><strong>Cypress</strong> (auto test)</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-cogs"></i>
+                            <span>Git, CI/CD</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-plug"></i>
+                            <span>RESTful APIs, WebSocket</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-github-link">
+                        <i class="fa fa-globe"></i>
+                        <a href="https://kinnhun.github.io/my-cv" target="_blank">kinnhun.github.io/my-cv</a>
+                    </div>
+                </div>
+
+                <!-- Work Experience - Full Width Timeline -->
+                <h2 class="cv-section-title">Work Experience</h2>
+                <div class="cv-timeline" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <!-- Nemark -->
+                    <div class="cv-card" style="padding: 25px;">
+                        <span class="date"
+                            style="color: var(--cv-primary); font-weight: 500; font-size: 13px;">20/12/2025 – Now</span>
+                        <h4 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin: 10px 0 5px;">
+                            Fullstack Developer</h4>
+                        <div
+                            style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cv-text-light); margin-bottom: 15px;">
+                            <i class="fa fa-building" style="color: var(--cv-primary);"></i> Nemark
+                        </div>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Developed Live-Chat system with online customer support.
+                            </li>
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                React.js, Next.js, Tailwind CSS for smooth UI.
+                            </li>
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Node.js APIs with WebSocket real-time.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- TECHLEAD -->
+                    <div class="cv-card" style="padding: 25px;">
+                        <span class="date"
+                            style="color: var(--cv-primary); font-weight: 500; font-size: 13px;">01/01/2025 –
+                            15/12/2025</span>
+                        <h4 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin: 10px 0 5px;">
+                            Frontend Developer</h4>
+                        <div
+                            style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cv-text-light); margin-bottom: 15px;">
+                            <i class="fa fa-building" style="color: var(--cv-primary);"></i> TECHLEAD
+                        </div>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                3 major projects for Swedish clients.
+                            </li>
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                ReactJS, TypeScript, Angular, Next.js.
+                            </li>
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Unit tests & automation tests with Cypress.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- FPT Software -->
+                    <div class="cv-card" style="padding: 25px;">
+                        <span class="date"
+                            style="color: var(--cv-primary); font-weight: 500; font-size: 13px;">02/01/2024 –
+                            01/04/2024</span>
+                        <h4 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin: 10px 0 5px;">
+                            Frontend Intern</h4>
+                        <div
+                            style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cv-text-light); margin-bottom: 15px;">
+                            <i class="fa fa-building" style="color: var(--cv-primary);"></i> FPT Software
+                        </div>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Developed UI for a module using React.
+                            </li>
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Fixed UI bugs and optimized UI/UX.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section - 2x2 Grid -->
+        <section class="cv-section" id="projects-section" style="padding-top: 0;">
+            <div class="container">
+                <h2 class="cv-section-title">Projects</h2>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 40px;">
+                    <!-- HGS -->
+                    <div class="cv-project-card" style="margin-bottom: 0;">
+                        <div class="header">
+                            <div>
+                                <span class="date">01/02/2025 – 01/05/2025</span>
+                                <h4>HẢI GIANG SYSTEM</h4>
+                                <p class="role">Role: Frontend Developer, Team Leader (Team of 4)</p>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React/Next.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Ant Design</span>
+                        </div>
+                        <p class="description">
+                            Student management system with profiles, grades, schedules, notifications.
+                        </p>
+                        <div class="links">
+                            <a href="https://hgs.info.vn" target="_blank">
+                                <i class="fa fa-external-link"></i> hgs.info.vn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- MISUCLOSET -->
+                    <div class="cv-project-card" style="margin-bottom: 0;">
+                        <div class="header">
+                            <div>
+                                <span class="date">2025</span>
+                                <h4>MISUCLOSET.SHOP</h4>
+                                <p class="role">Role: Fullstack Developer (Individual)</p>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <p class="description">
+                            E-commerce website for children's clothing with cart and checkout.
+                        </p>
+                    </div>
+
+                    <!-- BJJ -->
+                    <div class="cv-project-card" style="margin-bottom: 0;">
+                        <div class="header">
+                            <div>
+                                <span class="date">TECHLEAD Project</span>
+                                <h4>BJJ - Student Management</h4>
+                                <p class="role">Role: Frontend Developer</p>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">ReactJS</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                        </div>
+                        <p class="description">
+                            CRUD screens, data tables, filters, unit tests for Swedish client.
+                        </p>
+                        <div class="links">
+                            <a href="https://bjj.joosdigital.com" target="_blank">
+                                <i class="fa fa-external-link"></i> bjj.joosdigital.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- YMNER -->
+                    <div class="cv-project-card" style="margin-bottom: 0;">
+                        <div class="header">
+                            <div>
+                                <span class="date">TECHLEAD Project</span>
+                                <h4>YMNER</h4>
+                                <p class="role">Role: Frontend Developer</p>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Next.js</span>
+                        </div>
+                        <p class="description">
+                            Migrated entire frontend from Angular to Next.js, refactored components.
+                        </p>
+                        <div class="links">
+                            <a href="https://www.ymner.com" target="_blank">
+                                <i class="fa fa-external-link"></i> ymner.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills - Horizontal Badges -->
+                <div class="cv-card" style="padding: 30px;">
+                    <h3
+                        style="font-size: 20px; font-weight: 600; color: var(--cv-dark); margin-bottom: 25px; text-align: center;">
+                        Soft Skills</h3>
+                    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                        <div style="text-align: center;">
+                            <div
+                                style="width: 60px; height: 60px; background: var(--cv-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                                <i class="fa fa-users" style="font-size: 24px; color: var(--cv-primary);"></i>
+                            </div>
+                            <h4 style="font-size: 14px; font-weight: 600; color: var(--cv-dark); margin-bottom: 3px;">
+                                Team Leadership</h4>
+                            <p style="font-size: 12px; color: var(--cv-text-light); margin: 0;">Led HGS project team</p>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <div
+                                style="width: 60px; height: 60px; background: var(--cv-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                                <i class="fa fa-check-circle" style="font-size: 24px; color: var(--cv-primary);"></i>
+                            </div>
+                            <h4 style="font-size: 14px; font-weight: 600; color: var(--cv-dark); margin-bottom: 3px;">
+                                Quality Assurance</h4>
+                            <p style="font-size: 12px; color: var(--cv-text-light); margin: 0;">Cypress, CI/CD testing
+                            </p>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <div
+                                style="width: 60px; height: 60px; background: var(--cv-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                                <i class="fa fa-refresh" style="font-size: 24px; color: var(--cv-primary);"></i>
+                            </div>
+                            <h4 style="font-size: 14px; font-weight: 600; color: var(--cv-dark); margin-bottom: 3px;">
+                                Adaptability</h4>
+                            <p style="font-size: 12px; color: var(--cv-text-light); margin: 0;">Angular → Next.js
+                                migration</p>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <div
+                                style="width: 60px; height: 60px; background: var(--cv-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                                <i class="fa fa-globe" style="font-size: 24px; color: var(--cv-primary);"></i>
+                            </div>
+                            <h4 style="font-size: 14px; font-weight: 600; color: var(--cv-dark); margin-bottom: 3px;">
+                                International</h4>
+                            <p style="font-size: 12px; color: var(--cv-text-light); margin: 0;">Swedish clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer CTA -->
+    <footer class="cv-footer">
+        <div class="container">
+            <div class="cv-footer-content">
+                <div class="cv-footer-left">
+                    <h2>NEMARK.</h2>
+                    <p>Looking for a Fullstack Developer who values performance,<br>testing quality, and user
+                        experience?
+                    </p>
+                    <a href="index.html#contact-section" class="btn btn-primary">Contact Me</a>
+                </div>
+
+                <div class="cv-footer-right">
+                    <img src="images/bg-hero/kien.png" alt="Trần Trung Kiên" class="avatar">
+                    <div class="info">
+                        <h4>Trần Trung Kiên</h4>
+                        <p class="role">Frontend Developer</p>
+                        <div class="contacts">
+                            <a href="tel:0862497002"><i class="fa fa-phone"></i> 0862 497 002</a>
+                            <a href="mailto:trantrungkien14092002@gmail.com"><i class="fa fa-envelope"></i>
+                                trantrungkien...</a>
+                            <a href="https://www.facebook.com/kin2901" target="_blank"><i class="fa fa-facebook"></i>
+                                facebook.com/kin2901</a>
+                            <a href="https://kinnhun.github.io/my-cv" target="_blank"><i class="fa fa-globe"></i>
+                                Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+            <p style="font-size: 13px; color: var(--cv-text-light); margin: 0;">
+                © 2025 All rights reserved. This template is made with ❤ by Colorlib.
+            </p>
+        </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#39A2E1" />
+        </svg>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize owl carousel for hero - no drag/slide
+            if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
+                $('.home-slider').owlCarousel({
+                    loop: false,
+                    autoplay: false,
+                    margin: 0,
+                    animateOut: 'fadeOut',
+                    animateIn: 'fadeIn',
+                    nav: false,
+                    dots: false,
+                    mouseDrag: false,
+                    touchDrag: false,
+                    pullDrag: false,
+                    items: 1,
+                    responsive: {
+                        0: { items: 1 },
+                        600: { items: 1 },
+                        1000: { items: 1 }
+                    }
+                });
+            }
+
+            // Remove loader
+            setTimeout(function () {
+                if ($('#ftco-loader').length > 0) {
+                    $('#ftco-loader').removeClass('show');
+                }
+            }, 500);
+        });
+    </script>
+
+</body>
+
+</html>
