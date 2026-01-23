@@ -6,13 +6,42 @@
     'use strict';
 
     // Get base path for includes (relative to current page)
+    // Handles both root deployment and GitHub Pages subdirectory deployment
     function getBasePath() {
         const path = window.location.pathname;
-        const depth = (path.match(/\//g) || []).length - 1;
-        if (depth === 0 || path.endsWith('/index.html') || path === '/') {
+
+        // Find the project base (supports GitHub Pages subdirectory)
+        // e.g., /nemark-dev-website/index.html -> base is /nemark-dev-website/
+        // e.g., /nemark-dev-website/nguyen-manh-hung.html -> base is /nemark-dev-website/
+
+        // Check if we're at root level (index.html or just /)
+        const pathParts = path.split('/').filter(p => p !== '');
+
+        // For GitHub Pages project pages, first part is project name
+        // We need to check if we're in a subdirectory of the project
+
+        // If path ends with .html file directly under project root, return empty
+        // If we're deeper, we need to go up
+
+        // Simple approach: check if current file is in root or subdirectory
+        const htmlFile = pathParts[pathParts.length - 1];
+        const isHtmlFile = htmlFile && htmlFile.endsWith('.html');
+
+        // For pages like /nemark-dev-website/index.html or /nemark-dev-website/nguyen-manh-hung.html
+        // We're at project root, so return empty string
+        if (isHtmlFile && pathParts.length <= 2) {
             return '';
         }
-        return '../'.repeat(depth);
+
+        // For pages in subdirectories, calculate how many levels up
+        if (isHtmlFile && pathParts.length > 2) {
+            // Subtract 2: 1 for project name, 1 for the html file itself
+            const depth = pathParts.length - 2;
+            return '../'.repeat(depth);
+        }
+
+        // Default: we're at root
+        return '';
     }
 
     // Load HTML content into element and fix relative paths
