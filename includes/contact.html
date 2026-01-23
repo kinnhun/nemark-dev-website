@@ -14,24 +14,28 @@
                 <form action="#" class="bg-light p-4 p-md-5 contact-form">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Họ và tên">
+                            <div class="form-group floating-label">
+                                <input type="text" class="form-control" id="contact-name" placeholder=" " required>
+                                <label for="contact-name">Họ và tên</label>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email của bạn">
+                            <div class="form-group floating-label">
+                                <input type="email" class="form-control" id="contact-email" placeholder=" " required>
+                                <label for="contact-email">Email của bạn</label>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Tiêu đề">
+                            <div class="form-group floating-label">
+                                <input type="text" class="form-control" id="contact-subject" placeholder=" " required>
+                                <label for="contact-subject">Tiêu đề</label>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <textarea name="" id="" cols="30" rows="5" class="form-control"
-                                    placeholder="Nội dung tin nhắn"></textarea>
+                            <div class="form-group floating-label">
+                                <textarea class="form-control" id="contact-message" rows="5" placeholder=" "
+                                    required></textarea>
+                                <label for="contact-message">Nội dung tin nhắn</label>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -79,7 +83,8 @@
                                     </div>
                                     <div class="text pl-3">
                                         <p class="mb-0"><span>Điện thoại:</span></p>
-                                        <p class="mb-0"><a href="tel://0123456789">+84 123 456 789</a></p>
+                                        <p class="mb-0"><a class="text-black" href="tel://0123456789">+84 123 456
+                                                789</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +95,8 @@
                                     </div>
                                     <div class="text pl-3">
                                         <p class="mb-0"><span>Email:</span></p>
-                                        <p class="mb-0"><a href="mailto:contact@nemark.dev">contact@nemark.dev</a></p>
+                                        <p class="mb-0"><a class="text-primary"
+                                                href="mailto:contact@nemark.dev">contact@nemark.dev</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +107,8 @@
                                     </div>
                                     <div class="text pl-3">
                                         <p class="mb-0"><span>Website:</span></p>
-                                        <p class="mb-0"><a href="https://nemark.dev">nemark.dev</a></p>
+                                        <p class="mb-0"><a class="text-primary" href="https://nemark.dev">nemark.dev</a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

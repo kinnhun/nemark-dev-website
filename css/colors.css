@@ -1,0 +1,570 @@
+/* ===================================
+   NEW COLOR PALETTE - NEMARK DEV
+   Applied from logo colors
+   =================================== */
+
+:root {
+    /* Background System */
+    --bg-page: #F7FAFC;
+    --bg-section: #EEF4F8;
+    --bg-card: #FFFFFF;
+    --bg-elevated: #FDFEFF;
+
+    /* Brand / Primary Colors */
+    --brand-900: #0D69BE;
+    --brand-700: #1F86D9;
+    --brand-500: #39A2E1;
+    --brand-300: #62CDF9;
+    --brand-100: #E6F4FD;
+
+    /* Text Colors */
+    --text-primary: #1F2937;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --text-invert: #FFFFFF;
+
+    /* Button Primary */
+    --btn-primary-bg: #39A2E1;
+    --btn-primary-hover: #2E8ED0;
+    --btn-primary-active: #0D69BE;
+    --btn-primary-text: #FFFFFF;
+
+    /* Button Secondary */
+    --btn-secondary-bg: #E6F4FD;
+    --btn-secondary-hover: #D6ECFA;
+    --btn-secondary-text: #1F86D9;
+
+    /* Hover / Focus / Active */
+    --hover-bg-soft: rgba(57, 162, 225, 0.08);
+    --hover-bg-medium: rgba(57, 162, 225, 0.14);
+    --focus-ring: rgba(57, 162, 225, 0.35);
+
+    /* Border & Divider */
+    --border-light: #E2E8F0;
+    --border-brand: rgba(15, 105, 190, 0.15);
+    --divider-soft: rgba(148, 163, 184, 0.25);
+
+    /* Shadow (với ánh xanh) */
+    --shadow-xs: 0 1px 2px rgba(15, 105, 190, 0.05);
+    --shadow-sm: 0 4px 10px rgba(15, 105, 190, 0.10);
+    --shadow-md: 0 10px 30px rgba(15, 105, 190, 0.12);
+    --shadow-lg: 0 20px 60px rgba(15, 105, 190, 0.15);
+
+    /* Status Colors */
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --info: #39A2E1;
+
+    /* Gradient */
+    --gradient-brand: linear-gradient(135deg, #0D69BE, #39A2E1 55%, #62CDF9);
+}
+
+/* ===================================
+   GLOBAL OVERRIDES
+   =================================== */
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--brand-500);
+}
+
+a:hover,
+a:focus {
+    color: var(--brand-700);
+}
+
+/* ===================================
+   TEXT COLORS
+   =================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: var(--text-primary);
+}
+
+.text-primary {
+    color: var(--brand-500) !important;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+.text-black:hover {
+    color: var(--brand-500) !important;
+}
+
+/* ===================================
+   BACKGROUNDS
+   =================================== */
+
+.bg-primary {
+    background: var(--brand-500) !important;
+}
+
+.bg-light {
+    background: var(--bg-section) !important;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+
+.btn.btn-primary,
+button.btn-primary,
+input.btn-primary,
+a.btn-primary {
+    background: #39A2E1 !important;
+    background-color: #39A2E1 !important;
+    border: 1px solid #39A2E1 !important;
+    border-color: #39A2E1 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 10px rgba(15, 105, 190, 0.10);
+    transition: all 0.3s ease;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+button.btn-primary:hover,
+button.btn-primary:focus,
+input.btn-primary:hover,
+input.btn-primary:focus,
+a.btn-primary:hover,
+a.btn-primary:focus {
+    background: #2E8ED0 !important;
+    background-color: #2E8ED0 !important;
+    border: 1px solid #2E8ED0 !important;
+    border-color: #2E8ED0 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 10px 30px rgba(15, 105, 190, 0.12);
+    transform: translateY(-2px);
+}
+
+.btn.btn-primary:active,
+button.btn-primary:active,
+input.btn-primary:active,
+a.btn-primary:active {
+    background: #0D69BE !important;
+    background-color: #0D69BE !important;
+    border: 1px solid #0D69BE !important;
+    border-color: #0D69BE !important;
+}
+
+.btn.btn-outline-primary,
+.btn-outline-primary,
+.btn.btn-primary.btn-outline-primary,
+.btn-primary.btn-outline-primary {
+    border: 2px solid #39A2E1 !important;
+    border-color: #39A2E1 !important;
+    color: #39A2E1 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.btn.btn-outline-primary:hover,
+.btn-outline-primary:hover,
+.btn.btn-primary.btn-outline-primary:hover,
+.btn-primary.btn-outline-primary:hover {
+    background: #39A2E1 !important;
+    background-color: #39A2E1 !important;
+    border: 2px solid #39A2E1 !important;
+    border-color: #39A2E1 !important;
+    color: #FFFFFF !important;
+}
+
+/* ===================================
+   NAVBAR
+   =================================== */
+
+.ftco-navbar-light .navbar-nav>.nav-item>.nav-link span:before {
+    background: var(--brand-500);
+}
+
+.ftco-navbar-light .navbar-nav>.nav-item.cta>a {
+    background: var(--brand-500);
+    border-color: var(--brand-500);
+}
+
+.ftco-navbar-light .navbar-nav>.nav-item>.nav-link.active,
+.ftco-navbar-light.scrolled .nav-item.active>a,
+.ftco-navbar-light.scrolled .nav-link.active {
+    color: var(--brand-500) !important;
+}
+
+.ftco-navbar-light .navbar-toggler:hover,
+.ftco-navbar-light .navbar-toggler:focus {
+    color: var(--brand-500);
+}
+
+.ftco-navbar-light.scrolled .nav-item.cta>a {
+    background: var(--brand-500);
+}
+
+.ftco-navbar-light.scrolled .navbar-brand span {
+    color: var(--brand-500);
+}
+
+/* Active nav item on scroll */
+.ftco-navbar-light .navbar-nav>.nav-item>.nav-link.active,
+.ftco-navbar-light .navbar-nav>.nav-item.active>.nav-link {
+    color: var(--brand-500) !important;
+}
+
+.ftco-navbar-light .navbar-nav>.nav-item>.nav-link.active span,
+.ftco-navbar-light .navbar-nav>.nav-item.active>.nav-link span {
+    color: var(--brand-500) !important;
+}
+
+.ftco-navbar-light .navbar-nav>.nav-item>.nav-link.active span:before,
+.ftco-navbar-light .navbar-nav>.nav-item.active>.nav-link span:before {
+    visibility: visible !important;
+    width: 100% !important;
+    background: var(--brand-500) !important;
+}
+
+.ftco-navbar-light.scrolled .navbar-nav>.nav-item>.nav-link.active,
+.ftco-navbar-light.scrolled .navbar-nav>.nav-item.active>.nav-link {
+    color: var(--brand-500) !important;
+}
+
+/* ===================================
+   HERO / SLIDER
+   =================================== */
+
+.owl-carousel.home-slider .slider-item .slider-text .subheading {
+    color: var(--brand-500);
+}
+
+.owl-carousel.home-slider .slider-item .slider-text h1 span {
+    color: var(--brand-500);
+}
+
+.owl-carousel.home-slider .owl-nav .owl-prev:hover span:before,
+.owl-carousel.home-slider .owl-nav .owl-next:hover span:before {
+    color: var(--brand-500);
+}
+
+/* ===================================
+   HEADINGS / SUBHEADINGS
+   =================================== */
+
+.heading-section .subheading {
+    color: var(--brand-500);
+}
+
+.slider-text .breadcrumbs span a:hover,
+.slider-text .breadcrumbs span a:focus,
+.slider-text .breadcrumbs span a:hover i,
+.slider-text .breadcrumbs span a:focus i {
+    color: var(--brand-500);
+}
+
+/* ===================================
+   ABOUT SECTION
+   =================================== */
+
+.ftco-about .about-author .author-info .title {
+    color: var(--brand-500);
+}
+
+.ftco-about .my-interest .interest-wrap .icon {
+    background: var(--brand-500);
+}
+
+/* ===================================
+   SERVICES
+   =================================== */
+
+.services .icon {
+    background: var(--brand-500);
+}
+
+.services:hover {
+    background: var(--brand-500) !important;
+}
+
+.services:hover .icon {
+    background: var(--bg-card);
+}
+
+.services:hover .icon span {
+    color: var(--brand-500);
+}
+
+/* ===================================
+   PROGRESS / SKILLS
+   =================================== */
+
+.progress-circle .h4 {
+    color: var(--brand-500);
+}
+
+.progress-circle .progress .progress-left .progress-bar,
+.progress-circle .progress .progress-right .progress-bar {
+    border-color: var(--brand-500) !important;
+}
+
+/* ===================================
+   HIRE ME SECTION
+   =================================== */
+
+.ftco-hireme {
+    background: var(--gradient-brand);
+}
+
+/* ===================================
+   PROJECTS
+   =================================== */
+
+.project .text span {
+    color: var(--brand-300);
+}
+
+/* ===================================
+   TESTIMONIALS
+   =================================== */
+
+.testimony-wrap .fa {
+    color: var(--brand-500);
+}
+
+/* ===================================
+   COUNTER
+   =================================== */
+
+.ftco-counter .icon {
+    background: var(--brand-500);
+}
+
+.ftco-counter .text span {
+    color: var(--brand-500);
+}
+
+/* ===================================
+   BLOG
+   =================================== */
+
+.blog-entry .text .meta-chat {
+    color: var(--brand-500);
+}
+
+.blog-entry .text .heading a:hover {
+    color: var(--brand-500);
+}
+
+/* ===================================
+   CONTACT
+   =================================== */
+
+.contact-section .dbox .icon {
+    background: var(--brand-500);
+}
+
+.contact-section .dbox .text span {
+    color: var(--brand-500);
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+.ftco-footer-social li a:hover {
+    background: var(--brand-500);
+}
+
+.footer-small-nav>li a:hover,
+.footer-small-nav>li a:focus {
+    color: var(--brand-500);
+}
+
+.media .ftco-icon span {
+    color: var(--brand-500);
+}
+
+/* ===================================
+   FORMS
+   =================================== */
+
+.form-control {
+    background-color: var(--bg-card, #FFFFFF) !important;
+    border: 1px solid var(--brand-300, #62CDF9) !important;
+    color: var(--text-primary, #1F2937) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.form-control::placeholder {
+    color: var(--text-muted, #94A3B8) !important;
+}
+
+.form-control:hover {
+    border-color: var(--brand-500, #39A2E1) !important;
+}
+
+.form-control:focus,
+.form-control:active {
+    background-color: var(--bg-card, #FFFFFF) !important;
+    border-color: var(--brand-500, #39A2E1) !important;
+    box-shadow: 0 0 0 3px var(--focus-ring, rgba(57, 162, 225, 0.35)) !important;
+    outline: none !important;
+}
+
+/* Contact Form specific overrides */
+.contact-form .form-control,
+.contact-form input.form-control,
+.contact-form textarea.form-control {
+    background-color: #FFFFFF !important;
+    border: 1px solid #62CDF9 !important;
+    color: #1F2937 !important;
+}
+
+.contact-form .form-control:hover,
+.contact-form input.form-control:hover,
+.contact-form textarea.form-control:hover {
+    border-color: #39A2E1 !important;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-control:active,
+.contact-form input.form-control:focus,
+.contact-form textarea.form-control:focus {
+    border-color: #39A2E1 !important;
+    box-shadow: 0 0 0 3px rgba(57, 162, 225, 0.35) !important;
+    outline: none !important;
+}
+
+textarea.form-control {
+    min-height: 150px !important;
+    resize: vertical !important;
+}
+
+/* Floating Label */
+.floating-label {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.floating-label .form-control {
+    padding-top: 20px !important;
+    padding-bottom: 8px !important;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    color: var(--text-muted, #94A3B8);
+    font-size: 1rem;
+    font-weight: 400;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    background: transparent;
+    padding: 0 4px;
+    margin: 0;
+}
+
+.floating-label textarea.form-control+label {
+    top: 20px;
+    transform: translateY(0);
+}
+
+/* Label floats up when input is focused or has value */
+.floating-label .form-control:focus+label,
+.floating-label .form-control:not(:placeholder-shown)+label,
+.floating-label .form-control.has-value+label {
+    top: 8px;
+    transform: translateY(0);
+    font-size: 0.75rem;
+    color: var(--brand-500, #39A2E1);
+    font-weight: 500;
+}
+
+.floating-label textarea.form-control:focus+label,
+.floating-label textarea.form-control:not(:placeholder-shown)+label,
+.floating-label textarea.form-control.has-value+label {
+    top: 4px;
+}
+
+/* ===================================
+   KEYFRAME ANIMATIONS (UPDATED)
+   =================================== */
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(57, 162, 225, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 30px rgba(57, 162, 225, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(57, 162, 225, 0);
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(57, 162, 225, 0.4);
+    }
+
+    70% {
+        -webkit-box-shadow: 0 0 0 30px rgba(57, 162, 225, 0);
+    }
+
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(57, 162, 225, 0);
+    }
+}
+
+/* ===================================
+   SCROLLBAR (OPTIONAL - MODERN LOOK)
+   =================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-section);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand-300);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-500);
+}
+
+/* ===================================
+   SELECTION
+   =================================== */
+
+::selection {
+    background: var(--brand-500);
+    color: var(--text-invert);
+}
+
+::-moz-selection {
+    background: var(--brand-500);
+    color: var(--text-invert);
+}

@@ -188,10 +188,53 @@
         handleScroll(); // Initial call
     }
 
+    // Custom scrollspy using Intersection Observer for better accuracy
+    function initCustomScrollspy() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('#ftco-nav .nav-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px', // Active when section is near top
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('id');
+
+                    // Update active class
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        const href = link.getAttribute('href');
+                        // Check if href contains the section ID
+                        if (href && (href === `#${sectionId}` || href.indexOf(`#${sectionId}`) !== -1)) {
+                            link.classList.add('active');
+                            // Also add active to parent list item
+                            if (link.parentElement.classList.contains('nav-item')) {
+                                link.parentElement.classList.add('active');
+                            }
+                        } else {
+                            if (link.parentElement.classList.contains('nav-item')) {
+                                link.parentElement.classList.remove('active');
+                            }
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    }
+
     // Initialize on DOM ready
     document.addEventListener('DOMContentLoaded', async function () {
-        // Load header and footer (don't wait)
-        loadInclude('header-placeholder', 'header.html');
+        // Load header and footer
+        const headerLoaded = await loadInclude('header-placeholder', 'header.html');
+
         loadInclude('footer-placeholder', 'footer.html');
         loadInclude('counter-placeholder', 'counter.html');
         loadInclude('about-placeholder', 'about.html');
@@ -241,5 +284,13 @@
         if (heroLoaded) {
             await loadTeamSlider();
         }
+
+        // Initialize scrollspy AFTER all sections are loaded
+        setTimeout(function () {
+            if (typeof $ !== 'undefined') {
+                $('body').scrollspy('refresh');
+            }
+            initCustomScrollspy();
+        }, 1000);
     });
 })();
