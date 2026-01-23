@@ -209,16 +209,8 @@
                         link.classList.remove('active');
                         const href = link.getAttribute('href');
                         // Check if href contains the section ID
-                        if (href && (href === `#${sectionId}` || href.indexOf(`#${sectionId}`) !== -1)) {
+                        if (href && href.includes(sectionId)) {
                             link.classList.add('active');
-                            // Also add active to parent list item
-                            if (link.parentElement.classList.contains('nav-item')) {
-                                link.parentElement.classList.add('active');
-                            }
-                        } else {
-                            if (link.parentElement.classList.contains('nav-item')) {
-                                link.parentElement.classList.remove('active');
-                            }
                         }
                     });
                 }
@@ -228,6 +220,44 @@
         sections.forEach(section => {
             observer.observe(section);
         });
+    }
+
+    // Initialize animations (copied from main.js but for dynamic content)
+    function initAnimations() {
+        if (typeof $ === 'undefined' || !$.fn.waypoint) return;
+
+        var i = 0;
+        $('.ftco-animate').waypoint(function (direction) {
+
+            if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
+
+                i++;
+
+                $(this.element).addClass('item-animate');
+                setTimeout(function () {
+
+                    $('body .ftco-animate.item-animate').each(function (k) {
+                        var el = $(this);
+                        setTimeout(function () {
+                            var effect = el.data('animate-effect');
+                            if (effect === 'fadeIn') {
+                                el.addClass('fadeIn ftco-animated');
+                            } else if (effect === 'fadeInLeft') {
+                                el.addClass('fadeInLeft ftco-animated');
+                            } else if (effect === 'fadeInRight') {
+                                el.addClass('fadeInRight ftco-animated');
+                            } else {
+                                el.addClass('fadeInUp ftco-animated');
+                            }
+                            el.removeClass('item-animate');
+                        }, k * 50, 'easeInOutExpo');
+                    });
+
+                }, 100);
+
+            }
+
+        }, { offset: '95%' });
     }
 
     // Initialize on DOM ready
@@ -285,12 +315,55 @@
             await loadTeamSlider();
         }
 
-        // Initialize scrollspy AFTER all sections are loaded
+        // Initialize scrollspy and animations AFTER all sections are loaded
         setTimeout(function () {
             if (typeof $ !== 'undefined') {
                 $('body').scrollspy('refresh');
             }
             initCustomScrollspy();
+            initAnimations();
+
+            // Handle initial hash scroll
+            if (window.location.hash) {
+                const targetId = window.location.hash;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Small delay to ensure layout is stable after animations init
+                    setTimeout(() => {
+                        $('html, body').animate({
+                            scrollTop: $(targetElement).offset().top - 70 // Adjust for fixed header
+                        }, 800, 'easeInOutExpo');
+                    }, 500);
+                }
+            }
+
+            // Scroll to Top Button Logic
+            const mybutton = document.getElementById("scrollToTopBtn");
+            if (mybutton) {
+                window.onscroll = function () {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        mybutton.style.display = "block";
+                    } else {
+                        mybutton.style.display = "none";
+                    }
+                };
+
+                mybutton.onclick = function () {
+                    $('html, body').animate({ scrollTop: 0 }, 800, 'easeInOutExpo');
+                };
+            }
+
+            // Remove loader after all content is loaded
+            var loader = function () {
+                setTimeout(function () {
+                    if ($('#ftco-loader').length > 0) {
+                        $('#ftco-loader').removeClass('show');
+                    }
+                }, 1);
+            };
+            loader();
+
         }, 1000);
     });
+
 })();
