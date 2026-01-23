@@ -568,3 +568,36 @@ textarea.form-control {
     background: var(--brand-500);
     color: var(--text-invert);
 }
+
+/* ===================================
+   VIETNAMESE FONT SUPPORT
+   Be Vietnam Pro - Full Vietnamese diacritics
+   =================================== */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+p,
+a,
+span,
+li,
+div,
+.navbar-brand,
+.nav-link,
+.btn,
+input,
+textarea,
+select,
+button {
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
