@@ -721,3 +721,10 @@ html {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Global: align dropdown icon inline with flexbox */
+.navbar-nav .dropdown-toggle {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px;
+}
