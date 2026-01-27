@@ -318,13 +318,41 @@
         }, { offset: '95%' });
     }
 
+    // Initialize counter animation
+    function initCounter() {
+        if (typeof $ === 'undefined' || !$.fn.waypoint || !$.fn.animateNumber) return;
+
+        $('#section-counter').waypoint(function (direction) {
+
+            if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
+
+                var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
+                $('.number').each(function () {
+                    var $this = $(this),
+                        num = $this.data('number');
+                    $this.animateNumber(
+                        {
+                            number: num,
+                            numberStep: comma_separator_number_step
+                        }, 7000
+                    );
+                });
+
+            }
+
+        }, { offset: '95%' });
+    }
+
     // Initialize on DOM ready
     document.addEventListener('DOMContentLoaded', async function () {
         // Load header and footer
         const headerLoaded = await loadInclude('header-placeholder', 'header.html');
 
         loadInclude('footer-placeholder', 'footer.html');
-        loadInclude('counter-placeholder', 'counter.html');
+        const counterLoaded = await loadInclude('counter-placeholder', 'counter.html');
+        if (counterLoaded) {
+            initCounter();
+        }
         loadInclude('about-placeholder', 'about.html');
 
         // Load skills and THEN init progress circles
