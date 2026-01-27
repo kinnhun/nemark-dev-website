@@ -15,7 +15,7 @@
     transform: translateY(0);
     transition: opacity 0.1s linear, transform 0.1s linear;
     will-change: opacity, transform;
-    display: inline-block;
+    display: block; /* Allow normal block flow for proper line wrapping */
 }
 
 /* Only apply hidden state if JS has initialized and detected it */
