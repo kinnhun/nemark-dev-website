@@ -642,6 +642,17 @@ p { font-size: 0.95rem; line-height: 1.6; }
     .ftco-navbar-light.scrolled .navbar-nav .dropdown-item:focus {
         color: #000 !important;
     }
+    /* Dropdown Toggle Align */
+    .navbar-nav .dropdown-toggle {
+        display: flex !important;
+        align-items: center !important;
+        white-space: nowrap;
+    }
+    .navbar-nav .dropdown-toggle::after {
+        margin-left: 0.5em; /* Spacing for the caret */
+        position: static !important; /* Reset positioning if absolute */
+        transform: translateY(1px); /* Minor optical alignment */
+    }
 
     /* Skills Grid */
     .cv-skills-grid {
