@@ -599,9 +599,6 @@ p { font-size: 0.95rem; line-height: 1.6; }
         border-radius: 10px;
         margin-bottom: 12px;
     }
-    .cv-card h4 {
-        font-size: 0.95rem;
-    }
     .cv-card p {
         font-size: 0.8rem;
     }
@@ -616,6 +613,34 @@ p { font-size: 0.95rem; line-height: 1.6; }
     }
     .cv-role {
         font-size: 0.9rem !important;
+    }
+
+    /* Fix Header Dropdown Mobile Style */
+    .navbar-nav .dropdown-menu {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding-left: 20px !important;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .navbar-nav .dropdown-item {
+        color: rgba(255,255,255,0.8) !important;
+        padding: 5px 0 !important;
+        font-size: 0.9rem;
+    }
+    .ftco-navbar-light.scrolled .navbar-nav .dropdown-item,
+    .ftco-navbar-light.awake .navbar-nav .dropdown-item {
+        color: rgba(0,0,0,0.8) !important;
+    }
+    .navbar-nav .dropdown-item:hover,
+    .navbar-nav .dropdown-item:focus {
+        color: #fff !important;
+        background-color: transparent !important;
+    }
+    .ftco-navbar-light.scrolled .navbar-nav .dropdown-item:hover,
+    .ftco-navbar-light.scrolled .navbar-nav .dropdown-item:focus {
+        color: #000 !important;
     }
 
     /* Skills Grid */
