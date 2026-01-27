@@ -170,9 +170,14 @@ p { font-size: 0.95rem; line-height: 1.6; }
         gap: 12px;
     }
     .card-seo img {
-        width: 60px !important;
-        height: 60px !important;
+        width: 45px !important;
+        height: 45px !important;
         margin-bottom: 0 !important;
+        order: 1 !important;
+    }
+    .card-seo .content {
+        flex: 1;
+        text-align: left !important;
     }
 
     /* =================================
