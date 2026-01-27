@@ -104,7 +104,13 @@
                 <div class="overlay"></div>
                 <div class="container-fluid px-md-0">
                     <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-                        <div class="one-third order-md-last img" style="background-image:url(${member.image});">
+                        <!-- Desktop Image -->
+                        <div class="one-third order-md-last img img-bg-desktop" style="background-image:url('${member.image}');">
+                            <div class="overlay"></div>
+                            <div class="overlay-1"></div>
+                        </div>
+                        <!-- Mobile Image -->
+                        <div class="one-third order-md-last img img-bg-mobile" style="background-image:url('${member.mobileImage}');">
                             <div class="overlay"></div>
                             <div class="overlay-1"></div>
                         </div>

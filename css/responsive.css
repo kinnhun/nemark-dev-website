@@ -1,0 +1,667 @@
+/* ===================================================
+   RESPONSIVE STYLES - Mobile & Tablet Layouts
+   Breakpoints: 576px (Phone), 768px (Tablet), 992px (Desktop)
+   =================================================== */
+
+/* =================================
+   GLOBAL FIXES - Text Overflow
+   ================================= */
+* {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* =================================
+   BASE TYPOGRAPHY - Smaller Text
+   ================================= */
+body {
+    font-size: 16px;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5, h6 { font-size: 1rem; }
+p { font-size: 0.95rem; line-height: 1.6; }
+
+/* =================================
+   TABLET (768px - 991px)
+   ================================= */
+@media (max-width: 991.98px) {
+    body { font-size: 15px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.35rem; }
+    h4 { font-size: 1.15rem; }
+    h5, h6 { font-size: 0.95rem; }
+    p { font-size: 0.9rem; }
+
+    /* Sections */
+    .ftco-section {
+        padding: 50px 0;
+    }
+
+    /* Cards & Containers */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Services Cards */
+    .service-card {
+        padding: 1.25rem;
+        margin-bottom: 15px;
+    }
+    .service-card h3 { font-size: 1.1rem; }
+    .service-card p { font-size: 0.85rem; }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* =================================
+   PHONE (max 767px)
+   ================================= */
+@media (max-width: 767.98px) {
+    body { font-size: 14px; }
+    h1 { font-size: 1.5rem !important; line-height: 1.3; }
+    h2 { font-size: 1.3rem !important; line-height: 1.3; }
+    h3 { font-size: 1.15rem; }
+    h4 { font-size: 1rem; }
+    h5, h6 { font-size: 0.9rem; }
+    p { font-size: 0.85rem; line-height: 1.5; }
+
+    /* Container - More padding on sides */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        max-width: 100% !important;
+    }
+
+    /* Sections */
+    .ftco-section {
+        padding: 35px 0;
+    }
+
+    /* Row gaps */
+    .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .row > [class*="col-"] {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* =================================
+       HEADING SECTIONS
+       ================================= */
+    .heading-section {
+        padding: 0 10px;
+    }
+    .heading-section h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+    .heading-section .subheading {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+    .heading-section p {
+        font-size: 0.8rem;
+        padding: 0 5px;
+    }
+
+    /* =================================
+       SERVICES SECTION - Cards spacing
+       ================================= */
+    .services-bento {
+        gap: 15px !important;
+        padding: 0 5px;
+    }
+    .service-card {
+        padding: 15px !important;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .service-card h3 { 
+        font-size: 0.95rem; 
+        margin-bottom: 5px;
+        text-align: left !important;
+    }
+    .service-card p { 
+        font-size: 0.8rem; 
+        margin: 0;
+        line-height: 1.4;
+        text-align: left !important;
+    }
+    .service-card img {
+        width: 45px !important;
+        height: 45px !important;
+        flex-shrink: 0;
+        order: 0 !important; /* Reset order for consistency */
+    }
+    .service-card .content {
+        flex: 1;
+        text-align: left !important;
+    }
+    /* Fix admin card to be consistent */
+    .card-admin {
+        flex-direction: row !important;
+    }
+    .card-admin img {
+        order: 0 !important;
+    }
+    .card-admin .content {
+        text-align: left !important;
+    }
+    /* Fix SEO card to be consistent row layout on mobile */
+    .card-seo {
+        flex-direction: row !important;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .card-seo img {
+        width: 60px !important;
+        height: 60px !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* =================================
+       COUNTER SECTION
+       ================================= */
+    .ftco-counter .row {
+        gap: 20px 0;
+    }
+    .ftco-counter .counter-wrap {
+        margin-bottom: 25px;
+    }
+    .ftco-counter .block-18 {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
+    .ftco-counter .icon {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 12px !important;
+    }
+    .ftco-counter .icon span {
+        font-size: 20px !important;
+    }
+    .ftco-counter .text {
+        text-align: center;
+    }
+    .ftco-counter .number {
+        font-size: 28px;
+        display: block;
+        text-align: center;
+    }
+    .ftco-counter .text span {
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+    }
+
+    /* =================================
+       HERO SECTION
+       ================================= */
+    /* =================================
+       HERO SECTION - Image Toggle
+       ================================= */
+    /* Default: Hide mobile image, show desktop image */
+    .img-bg-mobile { display: none !important; }
+    
+    @media (max-width: 767.98px) {
+        /* Mobile: Hide desktop image, show mobile image */
+        .img-bg-desktop { display: none !important; }
+        .img-bg-mobile { 
+            display: block !important;
+            width: 100% !important;
+        }
+    }
+
+    .hero .slider-text {
+        padding: 20px !important;
+    }
+    .hero .slider-text h1 {
+        font-size: 1.4rem !important;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+    .hero .slider-text .subheading {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+    .hero .slider-text p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    .hero .btn {
+        padding: 10px 18px;
+        font-size: 0.75rem;
+    }
+
+    /* =================================
+       ABOUT SECTION - Icon + Text alignment
+       ================================= */
+    .ftco-about {
+        padding: 30px 0;
+    }
+    .ftco-about .row {
+        flex-direction: column;
+    }
+    .ftco-about .col-md-6,
+    .ftco-about .col-lg-5,
+    .ftco-about .col-lg-7 {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px;
+    }
+    
+    /* About Info List - Stack labels and values */
+    .about-info {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .about-info li {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .about-info li span:first-child {
+        font-weight: 600;
+        margin-bottom: 4px;
+        font-size: 0.8rem;
+        color: #333;
+    }
+    .about-info li span:last-child {
+        font-size: 0.85rem;
+        word-break: break-word;
+    }
+
+    /* Team Values - Icon boxes */
+    .my-interest {
+        flex-direction: column !important;
+        gap: 10px;
+    }
+    .interest-wrap {
+        width: 100% !important;
+        padding: 10px 12px !important;
+        margin-bottom: 8px !important;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .interest-wrap .icon {
+        width: 35px !important;
+        min-width: 35px !important;
+        height: 35px !important;
+        flex-shrink: 0;
+    }
+    .interest-wrap .icon span {
+        font-size: 14px !important;
+    }
+    .interest-wrap .text {
+        font-size: 0.85rem;
+    }
+
+    /* =================================
+       CONTACT SECTION - Icon + Text alignment
+       ================================= */
+    .contact-section .contact-form {
+        padding: 20px !important;
+        margin-bottom: 20px;
+    }
+    .contact-section .form-control {
+        font-size: 0.85rem;
+        padding: 12px 14px;
+    }
+
+    /* Contact boxes (dbox) */
+    .dbox {
+        margin-bottom: 15px !important;
+        align-items: flex-start !important;
+    }
+    .dbox .icon {
+        width: 38px !important;
+        min-width: 38px !important;
+        height: 38px !important;
+        flex-shrink: 0;
+        margin-right: 12px;
+    }
+    .dbox .icon span {
+        font-size: 14px !important;
+    }
+    .dbox .text {
+        flex: 1;
+        min-width: 0; /* Prevent text overflow */
+    }
+    .dbox .text p {
+        font-size: 0.8rem !important;
+        margin-bottom: 2px !important;
+        word-break: break-word;
+    }
+    .dbox .text span {
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    /* =================================
+       SKILLS SECTION
+       ================================= */
+    .progress-circle {
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0 auto 15px;
+    }
+    .progress-circle .h4 {
+        font-size: 18px !important;
+    }
+
+    /* =================================
+       PROJECT CARDS
+       ================================= */
+    .project {
+        margin-bottom: 20px;
+    }
+    .project .text {
+        padding: 15px;
+    }
+    .project .text h3 {
+        font-size: 1rem;
+    }
+    .project .text span {
+        font-size: 0.7rem;
+    }
+
+    /* =================================
+       TESTIMONIALS
+       ================================= */
+    .testimony-wrap {
+        padding: 20px 15px;
+        margin: 0 5px;
+    }
+    .testimony-wrap p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    .testimony-wrap .user-img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    /* =================================
+       BUTTONS
+       ================================= */
+    .btn {
+        padding: 10px 18px;
+        font-size: 0.8rem;
+        min-height: 42px;
+    }
+    .btn-lg {
+        padding: 12px 22px;
+        font-size: 0.85rem;
+    }
+
+    /* =================================
+       NAVBAR
+       ================================= */
+    .ftco-navbar-light .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    /* =================================
+       FOOTER
+       ================================= */
+    .ftco-footer {
+        padding: 35px 0 20px;
+    }
+    .ftco-footer h2 {
+        font-size: 1.1rem;
+    }
+    .ftco-footer p, 
+    .ftco-footer li {
+        font-size: 0.8rem;
+    }
+
+    /* =================================
+       BLOG
+       ================================= */
+    .blog-entry .text {
+        padding: 15px;
+    }
+    .blog-entry .text h3 {
+        font-size: 1rem;
+    }
+    .blog-entry .meta span {
+        font-size: 0.7rem;
+    }
+}
+
+/* =================================
+   SMALL PHONE (max 575px)
+   ================================= */
+@media (max-width: 575.98px) {
+    body { font-size: 13px; }
+    h1 { font-size: 1.25rem !important; }
+    h2 { font-size: 1.15rem !important; }
+    h3 { font-size: 1rem; }
+
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Hero */
+    .hero .slider-text {
+        padding: 15px !important;
+    }
+    .hero .slider-text h1 {
+        font-size: 1.2rem !important;
+    }
+    .hero .slider-text .subheading {
+        font-size: 9px;
+    }
+
+    /* Services Bento - Single column */
+    .services-bento {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    .service-card {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        padding: 12px !important;
+    }
+
+    /* About section */
+    .ftco-about .heading-section h2 {
+        font-size: 1.1rem !important;
+    }
+    .about-info li {
+        padding-bottom: 10px;
+        margin-bottom: 10px !important;
+    }
+
+    /* Contact boxes - Stack vertically */
+    .dbox {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .dbox .icon {
+        margin: 0 auto 10px !important;
+    }
+    .dbox .text {
+        text-align: center;
+    }
+
+    /* Hire Me */
+    .ftco-hireme .hireme-wrap {
+        padding: 25px 15px !important;
+    }
+    .ftco-hireme h2 {
+        font-size: 1.1rem;
+    }
+    .ftco-hireme p {
+        font-size: 0.8rem;
+    }
+
+    /* Testimony */
+    .testimony-wrap {
+        padding: 18px 12px;
+    }
+    .testimony-wrap .user-img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    /* Counter */
+    .ftco-counter .col-md-3,
+    .ftco-counter .col-6 {
+        margin-bottom: 20px;
+    }
+}
+
+/* =================================
+   CV PAGE RESPONSIVE
+   ================================= */
+
+/* Tablet */
+@media (max-width: 991.98px) {
+    .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .cv-section {
+        padding: 35px 0;
+    }
+    .cv-section-title {
+        font-size: 22px;
+        text-align: center;
+    }
+    .cv-section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .cv-card {
+        padding: 18px;
+    }
+}
+
+/* Phone */
+@media (max-width: 767.98px) {
+    .cv-section {
+        padding: 25px 0;
+    }
+    .cv-section-title {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+    .cv-card {
+        padding: 14px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+    }
+    .cv-card h4 {
+        font-size: 0.95rem;
+    }
+    .cv-card p {
+        font-size: 0.8rem;
+    }
+
+    /* CV Hero/Profile */
+    .cv-profile-image {
+        width: 130px !important;
+        height: 130px !important;
+    }
+    .cv-name {
+        font-size: 1.3rem !important;
+    }
+    .cv-role {
+        font-size: 0.9rem !important;
+    }
+
+    /* Skills Grid */
+    .cv-skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+    }
+    .cv-skill-item {
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+
+    /* Timeline */
+    .cv-timeline-item {
+        padding-left: 18px !important;
+    }
+    .cv-timeline-date {
+        font-size: 0.7rem;
+    }
+    .cv-timeline-title {
+        font-size: 0.9rem;
+    }
+    .cv-timeline-desc {
+        font-size: 0.75rem;
+    }
+}
+
+/* Small Phone */
+@media (max-width: 575.98px) {
+    .cv-section {
+        padding: 20px 0;
+    }
+    .cv-section-title {
+        font-size: 16px;
+    }
+    .cv-skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .cv-profile-image {
+        width: 110px !important;
+        height: 110px !important;
+    }
+    .cv-name {
+        font-size: 1.15rem !important;
+    }
+}
+
+/* =================================
+   MOTION GRAPHICS RESPONSIVE
+   ================================= */
+@media (max-width: 767.98px) {
+    .motion-text-line {
+        transform: translateY(12px);
+    }
+    [data-motion-container] .motion-text-line {
+        transform: translateY(12px);
+    }
+}
+
+/* =================================
+   SMOOTH SCROLL & ACCESSIBILITY
+   ================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
