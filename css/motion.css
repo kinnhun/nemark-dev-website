@@ -1,0 +1,46 @@
+/* Motion Graphics - Premium Scroll Effects */
+
+/* 1. Section Reveal (Mask) */
+.motion-reveal-mask {
+    /* Initial state: Hidden by mask */
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 0.1s linear; /* Smooth scrub */
+    will-change: clip-path;
+}
+
+/* 2. Text Motion (Scrub Reading Rhythm) */
+/* 2. Text Motion (Scrub Reading Rhythm) */
+.motion-text-line {
+    opacity: 1; /* Fallback: Visible by default */
+    transform: translateY(0);
+    transition: opacity 0.1s linear, transform 0.1s linear;
+    will-change: opacity, transform;
+    display: inline-block;
+}
+
+/* Only apply hidden state if JS has initialized and detected it */
+[data-motion-container] .motion-text-line {
+    opacity: 0; 
+    transform: translateY(20px);
+}
+
+/* Reveal state via CSS Var logic or direct class */
+[data-motion-container] .motion-text-line.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Utility to split existing text into lines/words if needed, 
+   but for now we might wrap paragraphs manually or use JS */
+
+/* 3. Graphic Shape (Parallax/Scrub) */
+.motion-shape {
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+/* Global Motion Variable Context */
+[data-motion-container] {
+    --scroll-progress: 0;
+}

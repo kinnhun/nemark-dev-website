@@ -449,6 +449,11 @@
             };
             loader();
 
+            // Re-scan for motion elements now that everything is injected
+            if (window.MotionController) {
+                setTimeout(() => window.MotionController.scanSections(), 100);
+            }
+
         }, 1000);
     });
 
