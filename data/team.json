@@ -2,20 +2,6 @@
   "team": [
     {
       "id": 1,
-      "name": "Nguyễn Mạnh Hùng",
-      "role": "Team Leader & Full Stack Developer",
-      "specialty": ".NET Core, Angular 18 & DevOps",
-      "subheading": "Leading with Vision",
-      "headline": "Hi, I'm <span>Hung</span> Delivering success",
-      "image": "images/bg-hero/hung.png",
-      "mobileImage": "images/bg-hero/mobile/hung.png",
-      "ctaHire": "View Portfolio",
-      "portfolioLink": "nguyen-manh-hung.html",
-      "ctaCV": "Download CV",
-      "cvFile": "cv/nguyen_manh_hung_nemark.pdf"
-    },
-    {
-      "id": 2,
       "name": "Nguyễn Vy Anh",
       "role": "Business Analyst / Software Tester",
       "specialty": "Testing & Requirement Analysis",
@@ -29,7 +15,7 @@
       "cvFile": "cv/nguyen_vy_anh_nemark.pdf"
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "Trần Trung Kiên",
       "role": "Fullstack Developer",
       "specialty": "React/Next.js & CI/CD",
@@ -43,60 +29,32 @@
       "cvFile": "cv/tran_trung_kien_nemark.pdf"
     },
     {
-      "id": 4,
-      "name": "Nguyễn Đình Quang",
+      "id": 3,
+      "name": "Đào Huy Toàn",
       "role": "Fullstack Developer",
-      "specialty": "Node.js, Next.js & Java Spring",
+      "specialty": "Django & DevOps",
       "subheading": "Scalable Backend Systems",
-      "headline": "Hi, I'm <span>Quang</span> Logic & Performance",
-      "image": "images/bg-hero/quang.png",
-      "mobileImage": "images/bg-hero/mobile/quang.png",
+      "headline": "Hi, I'm <span>Toàn</span> Building robust web apps",
+      "image": "images/bg-hero/toan.png",
+      "mobileImage": "images/bg-hero/mobile/toan.png",
       "ctaHire": "View Portfolio",
-      "portfolioLink": "nguyen-dinh-quang.html",
+      "portfolioLink": "dao-huy-toan.html",
       "ctaCV": "Download CV",
-      "cvFile": "cv/nguyen_dinh_quang_nemark.pdf"
+      "cvFile": "cv/dao_huy_toan_nemark.pdf"
     },
     {
-      "id": 5,
-      "name": "Lê Khánh Duy",
-      "role": "Fullstack Developer",
-      "specialty": "ReactJS, Node.js & Performance",
-      "subheading": "Clean Code & UX",
-      "headline": "Hi, I'm <span>Duy</span> Pixel-perfect developer",
-      "image": "images/bg-hero/duy.png",
-      "mobileImage": "images/bg-hero/mobile/duy.png",
+      "id": 4,
+      "name": "Nguyễn Quang Huy",
+      "role": "Game Developer",
+      "specialty": "Unity & VR Development",
+      "subheading": "Creative Game Solutions",
+      "headline": "Hi, I'm <span>Huy</span> Crafting immersive games",
+      "image": "images/bg-hero/huy.png",
+      "mobileImage": "images/bg-hero/mobile/huy.png",
       "ctaHire": "View Portfolio",
-      "portfolioLink": "le-khanh-duy.html",
+      "portfolioLink": "nguyen-quang-huy.html",
       "ctaCV": "Download CV",
-      "cvFile": "cv/le_khanh_duy_nemark.pdf"
-    },
-    {
-      "id": 6,
-      "name": "Vũ Công Thắng",
-      "role": "Fullstack Developer",
-      "specialty": "ASP.NET Core & Java Spring",
-      "subheading": "Enterprise Solutions",
-      "headline": "Hi, I'm <span>Thang</span> Building robust apps",
-      "image": "images/bg-hero/thang.png",
-      "mobileImage": "images/bg-hero/mobile/thang.png",
-      "ctaHire": "View Portfolio",
-      "portfolioLink": "vu-cong-thang.html",
-      "ctaCV": "Download CV",
-      "cvFile": "cv/vu_cong_thang_nemark.pdf"
-    },
-    {
-      "id": 7,
-      "name": "Trần Đình Khải",
-      "role": "Fullstack Developer",
-      "specialty": "ASP.NET Core, Next.js & SQL",
-      "subheading": "Backend Excellence",
-      "headline": "Hi, I'm <span>Khai</span> Reliable code quality",
-      "image": "images/bg-hero/khai.png",
-      "mobileImage": "images/bg-hero/mobile/khai.png",
-      "ctaHire": "View Portfolio",
-      "portfolioLink": "tran-dinh-khai.html",
-      "ctaCV": "Download CV",
-      "cvFile": "cv/tran_dinh_khai_nemark.pdf"
+      "cvFile": "cv/nguyen_quang_huy_nemark.pdf"
     }
   ]
 }

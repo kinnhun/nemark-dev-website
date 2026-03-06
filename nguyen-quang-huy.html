@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>Nguyễn Quang Huy - Game Developer | Nemark Dev</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* ===== CV PAGE SPECIFIC STYLES ===== */
+        :root {
+            --cv-primary: #39A2E1;
+            --cv-primary-light: #E8F4FD;
+            --cv-bg: #F0F4F8;
+            --cv-white: #FFFFFF;
+            --cv-dark: #1a1a2e;
+            --cv-text: #4a4a4a;
+            --cv-text-light: #6b7280;
+        }
+
+        .cv-page-content {
+            background: var(--cv-bg);
+        }
+
+        /* Breadcrumb */
+        .cv-breadcrumb {
+            padding: 15px 0;
+            font-size: 14px;
+            color: var(--cv-text-light);
+            background: var(--cv-bg);
+        }
+
+        .cv-breadcrumb a {
+            color: var(--cv-text-light);
+            text-decoration: none;
+        }
+
+        .cv-breadcrumb a:hover {
+            color: var(--cv-primary);
+        }
+
+        /* Section Styles */
+        .cv-section {
+            padding: 60px 0;
+            background: var(--cv-bg);
+        }
+
+        .cv-section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .cv-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--cv-primary);
+            border-radius: 2px;
+        }
+
+        /* Two Column Layout */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Card Styles */
+        .cv-card {
+            background: var(--cv-white);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Education Card */
+        .cv-education-card {
+            padding: 25px 30px;
+        }
+
+        .cv-education-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .cv-education-card .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--cv-primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cv-education-card .icon i {
+            font-size: 24px;
+            color: var(--cv-primary);
+        }
+
+        .cv-education-card .header-text h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 3px;
+        }
+
+        .cv-education-card .header-text .school {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-primary);
+            margin: 0;
+        }
+
+        .cv-education-card .major {
+            font-size: 15px;
+            color: var(--cv-text);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cv-education-card .meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--cv-text-light);
+        }
+
+        .cv-education-card .meta .divider {
+            width: 1px;
+            height: 20px;
+            background: #ddd;
+        }
+
+        .cv-education-card .meta .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cv-education-card .meta .icons i {
+            color: var(--cv-primary);
+            font-size: 16px;
+        }
+
+        /* Skills Grid */
+        .cv-skills-card {
+            padding: 25px;
+        }
+
+        .cv-skills-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 20px;
+        }
+
+        .cv-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .cv-skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--cv-text);
+        }
+
+        .cv-skill-item i {
+            width: 32px;
+            height: 32px;
+            background: var(--cv-primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cv-primary);
+            font-size: 16px;
+        }
+
+        .cv-skill-item strong {
+            color: var(--cv-dark);
+        }
+
+        .cv-github-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .cv-github-link i {
+            color: var(--cv-primary);
+        }
+
+        .cv-github-link a {
+            color: var(--cv-primary);
+            text-decoration: none;
+        }
+
+        /* Project Card */
+        .cv-project-card {
+            background: var(--cv-white);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cv-project-card .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .cv-project-card .date {
+            font-size: 13px;
+            color: var(--cv-primary);
+            font-weight: 500;
+        }
+
+        .cv-project-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-project-card .role {
+            font-size: 14px;
+            color: var(--cv-text-light);
+            margin-bottom: 15px;
+        }
+
+        .cv-project-card .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cv-project-card .tech-tag {
+            background: var(--cv-primary-light);
+            color: var(--cv-primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .cv-project-card .description {
+            font-size: 14px;
+            color: var(--cv-text);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .cv-project-card .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .cv-project-card .links a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--cv-primary);
+            text-decoration: none;
+        }
+
+        .cv-project-card .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer CTA */
+        .cv-footer {
+            background: var(--cv-white);
+            padding: 40px 0;
+        }
+
+        .cv-footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cv-footer-left h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--cv-dark);
+            margin-bottom: 10px;
+        }
+
+        .cv-footer-left p {
+            font-size: 16px;
+            color: var(--cv-text);
+            margin-bottom: 20px;
+        }
+
+        .cv-footer-right {
+            background: var(--cv-primary-light);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cv-footer-right .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cv-footer-right .info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-footer-right .info .role {
+            font-size: 14px;
+            color: var(--cv-text-light);
+            margin-bottom: 10px;
+        }
+
+        .cv-footer-right .contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .cv-footer-right .contacts a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cv-text);
+            text-decoration: none;
+        }
+
+        .cv-footer-right .contacts i {
+            color: var(--cv-primary);
+        }
+
+        @media (max-width: 768px) {
+            .cv-footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .cv-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section id="home-section" class="hero">
+        <div class="home-slider owl-carousel">
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container-fluid px-md-0">
+                    <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+                        data-scrollax-parent="true">
+                        <!-- Desktop Image -->
+                        <div class="one-third order-md-last img img-bg-desktop"
+                            style="background-image:url(images/bg-hero/huy.png);">
+                            <div class="overlay"></div>
+                            <div class="overlay-1"></div>
+                        </div>
+                        <!-- Mobile Image -->
+                        <div class="one-third order-md-last img img-bg-mobile"
+                            style="background-image:url(images/bg-hero/mobile/huy.png);">
+                            <div class="overlay"></div>
+                            <div class="overlay-1"></div>
+                        </div>
+                        <div class="one-forth d-flex align-items-center fadeInUp ftco-animated"
+                            data-scrollax=" properties: { translateY: '70%' }">
+                            <div class="text">
+                                <span class="subheading">Hello! I'm</span>
+                                <h1 class="mb-4 mt-3">Nguyễn Quang <span>Huy</span></h1>
+                                <p class="member-info"><strong>Game Developer</strong></p>
+                                <p>Unity Engine • C# • Blender 3D • VR</p>
+                                <p>
+                                    <a href="cv/nguyen_quang_huy_nemark.pdf" class="btn btn-primary btn-outline-primary"
+                                        download>Download CV</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Page Content -->
+    <div class="cv-page-content">
+
+        <!-- Breadcrumb -->
+        <div class="cv-breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a> &gt; Nguyễn Quang Huy
+            </div>
+        </div>
+
+        <!-- About Me + Education -->
+        <section class="cv-section">
+            <div class="container">
+                <div class="cv-grid">
+                    <!-- About Me -->
+                    <div>
+                        <h2 class="cv-section-title">About Me</h2>
+                        <p style="color: var(--cv-text); line-height: 1.8; font-size: 15px;">
+                            Aspiring to expand knowledge and skills in developing Hyper &amp; Hybrid Casual Games and
+                            Puzzles.
+                            Successfully completed graduation thesis defense in May 2025, Faculty of IT. Proficient in
+                            Unity Engine and experienced with Blender 3D for creating 3D models. Proactive work
+                            attitude,
+                            continuously learning, persistent in problem-solving, and ready for teamwork.
+                        </p>
+
+                        <div class="cv-card" style="margin-top: 25px; padding: 20px;">
+                            <h3 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin-bottom: 15px;">
+                                <i class="fa fa-info-circle" style="color: var(--cv-primary); margin-right: 8px;"></i>
+                                Personal Info
+                            </h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fa fa-calendar" style="color: var(--cv-primary); width: 16px;"></i>
+                                    <span style="color: var(--cv-text);">21/03/2003</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fa fa-mars" style="color: var(--cv-primary); width: 16px;"></i>
+                                    <span style="color: var(--cv-text);">Male</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fa fa-phone" style="color: var(--cv-primary); width: 16px;"></i>
+                                    <span style="color: var(--cv-text);">0337 762 692</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fa fa-envelope" style="color: var(--cv-primary); width: 16px;"></i>
+                                    <span style="color: var(--cv-text);">lhuymel2@gmail.com</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px; grid-column: span 2;">
+                                    <i class="fa fa-map-marker" style="color: var(--cv-primary); width: 16px;"></i>
+                                    <span style="color: var(--cv-text);">Mai Dịch, Cầu Giấy, Hà Nội</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Card -->
+                    <div class="cv-card cv-education-card">
+                        <div class="cv-education-header">
+                            <div class="icon">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                            <div class="header-text">
+                                <h3>Education</h3>
+                                <p class="school">University of Information Technology</p>
+                            </div>
+                        </div>
+                        <p class="major"><strong>Major:</strong> Information Technology — Successfully defended
+                            graduation thesis in May 2025</p>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                            <span
+                                style="background: var(--cv-primary-light); color: var(--cv-primary); padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+                                GPA: 3.0 / 4.0
+                            </span>
+                        </div>
+                        <div class="meta">
+                            <span>Oct 2021 – 2025</span>
+                            <span class="divider"></span>
+                            <span class="icons">
+                                <i class="fa fa-book"></i>
+                                <i class="fa fa-gamepad"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="cv-section" style="padding-top: 0;">
+            <div class="container">
+                <div class="cv-card cv-skills-card" style="margin-bottom: 40px;">
+                    <h3>Technical Skills</h3>
+                    <div class="cv-skills-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="cv-skill-item">
+                            <i class="fa fa-code"></i>
+                            <span><strong>Language:</strong> C#, OOP</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-gamepad"></i>
+                            <span><strong>Engine:</strong> Unity Engine</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-cube"></i>
+                            <span><strong>3D:</strong> Blender 3D</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-paint-brush"></i>
+                            <span><strong>Design:</strong> Photoshop, Premiere</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-language"></i>
+                            <span><strong>English:</strong> TOEIC 535</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-cogs"></i>
+                            <span><strong>Patterns:</strong> Singleton, Observer, State, Object Pool</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-github-link">
+                        <i class="fa fa-github"></i>
+                        <a href="https://github.com/huyme2103" target="_blank">github.com/huyme2103</a>
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+                <h2 class="cv-section-title">Work Experience</h2>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                    <!-- GeoVR -->
+                    <div class="cv-card" style="padding: 25px;">
+                        <span style="color: var(--cv-primary); font-weight: 500; font-size: 13px;">05/11/2024 –
+                            30/07/2025</span>
+                        <h4 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin: 10px 0 5px;">
+                            Game Developer (VR)</h4>
+                        <div
+                            style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cv-text-light); margin-bottom: 15px;">
+                            <i class="fa fa-building" style="color: var(--cv-primary);"></i> GEOVR Technology JSC
+                        </div>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Created and edited 3D models using Blender
+                            </li>
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Optimized graphics performance
+                            </li>
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Developed VR game features: UI, physics, object interaction in 3D space using VR Meta
+                                Quest headset
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- TERAs Global -->
+                    <div class="cv-card" style="padding: 25px;">
+                        <span style="color: var(--cv-primary); font-weight: 500; font-size: 13px;">09/2025 –
+                            02/2026</span>
+                        <h4 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin: 10px 0 5px;">
+                            Game Developer (Mobile)</h4>
+                        <div
+                            style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cv-text-light); margin-bottom: 15px;">
+                            <i class="fa fa-building" style="color: var(--cv-primary);"></i> TERAs Global - Mobile Game
+                            Studio
+                        </div>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Developed mobile games for publishing on app stores
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Indie Game Projects -->
+        <section class="cv-section" id="projects-section" style="padding-top: 0;">
+            <div class="container">
+                <h2 class="cv-section-title">Indie Game Projects</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 40px;">
+
+                    <!-- Runeblade Quest -->
+                    <div class="cv-project-card" style="margin-bottom: 0;">
+                        <div class="header">
+                            <div>
+                                <span class="date">12/01/2025 – 18/05/2025</span>
+                                <h4>Runeblade Quest of the Fae</h4>
+                                <p class="role">2D Topdown RPG</p>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Singleton</span>
+                            <span class="tech-tag">ScriptableObject</span>
+                            <span class="tech-tag">JSON Save/Load</span>
+                            <span class="tech-tag">AI Voice</span>
+                        </div>
+                        <p class="description">
+                            2D pixel art graphics with AI voice-over. The project utilizes advanced programming
+                            techniques
+                            such as Singleton Pattern and manages quest data using ScriptableObject. Save/load game data
+                            via JSON.
+                        </p>
+                        <div class="links">
+                            <a href="https://play.google.com/store/apps/details?id=com.huystudio.rpgquest&pcampaignid=web_share"
+                                target="_blank">
+                                <i class="fa fa-android"></i> Google Play
+                            </a>
+                            <a href="https://huymevippro.itch.io/runeblade-quest-of-the-fae-web-pc" target="_blank">
+                                <i class="fa fa-globe"></i> Web/PC
+                            </a>
+                            <a href="https://youtu.be/1YbGsp95p0E" target="_blank">
+                                <i class="fa fa-youtube-play"></i> Trailer
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sand Crush -->
+                    <div class="cv-project-card" style="margin-bottom: 0;">
+                        <div class="header">
+                            <div>
+                                <span class="date">25/09/2025 – 10/2025</span>
+                                <h4>Sand Crush</h4>
+                                <p class="role">2D Puzzle Game</p>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">Singleton</span>
+                            <span class="tech-tag">Object Pool</span>
+                            <span class="tech-tag">Observer</span>
+                            <span class="tech-tag">BFS Algorithm</span>
+                            <span class="tech-tag">LeanTween</span>
+                        </div>
+                        <p class="description">
+                            Sand physics simulation game using Singleton, Object Pool, and Observer Pattern for managing
+                            Input–Gameplay interaction. Applied Texture2D Rendering for natural sand-falling effects
+                            and BFS Algorithm for color-matching region detection. Drag &amp; Drop and Shape Manager
+                            systems designed with modular architecture following SOLID principles. Integrated LeanTween
+                            for UI animations.
+                        </p>
+                        <div class="links">
+                            <a href="https://huymevippro.itch.io/sand-crush" target="_blank">
+                                <i class="fa fa-globe"></i> Play on Web
+                            </a>
+                            <a href="https://github.com/huyme2103/Sand-Crush" target="_blank">
+                                <i class="fa fa-github"></i> GitHub
+                            </a>
+                            <a href="https://youtube.com/shorts/6UAwGvJ5254" target="_blank">
+                                <i class="fa fa-youtube-play"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hexa Sort -->
+                    <div class="cv-project-card" style="margin-bottom: 0;">
+                        <div class="header">
+                            <div>
+                                <span class="date">01/09/2025 – 23/09/2025</span>
+                                <h4>Hexa Sort</h4>
+                                <p class="role">3D Puzzle Game</p>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">State Pattern</span>
+                            <span class="tech-tag">Observer</span>
+                            <span class="tech-tag">Shader Graph</span>
+                            <span class="tech-tag">LeanTween</span>
+                            <span class="tech-tag">PlayerPrefs</span>
+                        </div>
+                        <p class="description">
+                            Built with Singleton + State Pattern, managing gameplay across multiple scenes. Developed
+                            Event System (Observer Pattern) to separate UI and gameplay logic. Applied custom Shader
+                            Graph
+                            for visual effects. Integrated LeanTween for smooth UI and gameplay animations. Implemented
+                            Save/Load system (PlayerPrefs) ensuring persistent data across sessions.
+                        </p>
+                        <div class="links">
+                            <a href="https://huymevippro.itch.io/hexa-sort-mobile" target="_blank">
+                                <i class="fa fa-globe"></i> Play on Web
+                            </a>
+                            <a href="https://github.com/huyme2103/hexa-sort" target="_blank">
+                                <i class="fa fa-github"></i> GitHub
+                            </a>
+                            <a href="https://www.youtube.com/shorts/TsTh68_kmHs" target="_blank">
+                                <i class="fa fa-youtube-play"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Info + Interests -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    <!-- Additional Info -->
+                    <div class="cv-card" style="padding: 30px;">
+                        <h3
+                            style="font-size: 20px; font-weight: 600; color: var(--cv-dark); margin-bottom: 25px; text-align: center;">
+                            Additional Information</h3>
+                        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                            <div style="text-align: center;">
+                                <div
+                                    style="width: 60px; height: 60px; background: var(--cv-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                                    <i class="fa fa-language" style="font-size: 24px; color: var(--cv-primary);"></i>
+                                </div>
+                                <h4
+                                    style="font-size: 14px; font-weight: 600; color: var(--cv-dark); margin-bottom: 3px;">
+                                    TOEIC 535</h4>
+                                <p style="font-size: 12px; color: var(--cv-text-light); margin: 0;">English</p>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <div
+                                    style="width: 60px; height: 60px; background: var(--cv-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                                    <i class="fa fa-lightbulb-o" style="font-size: 24px; color: var(--cv-primary);"></i>
+                                </div>
+                                <h4
+                                    style="font-size: 14px; font-weight: 600; color: var(--cv-dark); margin-bottom: 3px;">
+                                    Proactive</h4>
+                                <p style="font-size: 12px; color: var(--cv-text-light); margin: 0;">Self-learner</p>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <div
+                                    style="width: 60px; height: 60px; background: var(--cv-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                                    <i class="fa fa-users" style="font-size: 24px; color: var(--cv-primary);"></i>
+                                </div>
+                                <h4
+                                    style="font-size: 14px; font-weight: 600; color: var(--cv-dark); margin-bottom: 3px;">
+                                    Teamwork</h4>
+                                <p style="font-size: 12px; color: var(--cv-text-light); margin: 0;">Ready to collaborate
+                                </p>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <div
+                                    style="width: 60px; height: 60px; background: var(--cv-primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
+                                    <i class="fa fa-puzzle-piece"
+                                        style="font-size: 24px; color: var(--cv-primary);"></i>
+                                </div>
+                                <h4
+                                    style="font-size: 14px; font-weight: 600; color: var(--cv-dark); margin-bottom: 3px;">
+                                    Problem Solver</h4>
+                                <p style="font-size: 12px; color: var(--cv-text-light); margin: 0;">Persistent</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interests -->
+                    <div class="cv-card" style="padding: 30px;">
+                        <h3 style="font-size: 20px; font-weight: 600; color: var(--cv-dark); margin-bottom: 20px;">
+                            <i class="fa fa-heart" style="color: var(--cv-primary); margin-right: 8px;"></i> Interests
+                        </h3>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 12px; font-size: 14px; color: var(--cv-text); line-height: 1.6;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">•</span>
+                                In free time, regularly follows Unity/C# channels on YouTube (Brackeys,
+                                GameDevGuide, Code Monkey) and works on personal projects to sharpen programming
+                                skills.
+                            </li>
+                            <li
+                                style="position: relative; padding-left: 18px; margin-bottom: 12px; font-size: 14px; color: var(--cv-text); line-height: 1.6;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">•</span>
+                                Watches game streamers to research gameplay mechanics and user experience.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer CTA -->
+    <footer class="cv-footer">
+        <div class="container">
+            <div class="cv-footer-content">
+                <div class="cv-footer-left">
+                    <h2>NEMARK.</h2>
+                    <p>Looking for a Game Developer with Unity &amp; VR experience,<br>who builds engaging games and
+                        creative 3D content?</p>
+                    <a href="index.html#contact-section" class="btn btn-primary">Contact Me</a>
+                </div>
+
+                <div class="cv-footer-right">
+                    <img src="images/bg-hero/huy.png" alt="Nguyễn Quang Huy" class="avatar">
+                    <div class="info">
+                        <h4>Nguyễn Quang Huy</h4>
+                        <p class="role">Game Developer</p>
+                        <div class="contacts">
+                            <a href="tel:0337762692"><i class="fa fa-phone"></i> 0337 762 692</a>
+                            <a href="mailto:lhuymel2@gmail.com"><i class="fa fa-envelope"></i> lhuymel2@gmail.com</a>
+                            <a href="https://github.com/huyme2103" target="_blank"><i class="fa fa-github"></i>
+                                huyme2103</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+            <p style="font-size: 13px; color: var(--cv-text-light); margin: 0;">
+                © 2025 All rights reserved. This template is made with ❤ by Colorlib.
+            </p>
+        </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/includes.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Remove loader
+            setTimeout(function () {
+                if ($('#ftco-loader').length > 0) {
+                    $('#ftco-loader').removeClass('show');
+                }
+            }, 500);
+        });
+    </script>
+
+</body>
+
+</html>

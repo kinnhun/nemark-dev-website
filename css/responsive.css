@@ -221,6 +221,15 @@ p { font-size: 0.95rem; line-height: 1.6; }
     /* =================================
        HERO SECTION
        ================================= */
+    /* Allow vertical scrolling on hero slider (Owl Carousel blocks touch events) */
+    .home-slider,
+    .home-slider .owl-stage-outer,
+    .home-slider .owl-stage,
+    .home-slider .owl-item,
+    .home-slider .slider-item {
+        touch-action: pan-y !important;
+    }
+
     /* =================================
        HERO SECTION - Image Toggle
        ================================= */
