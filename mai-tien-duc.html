@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>Mai Tiến Đức - CEO & Infrastructure Engineer | Nemark Dev</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* ===== CV PAGE SPECIFIC STYLES ===== */
+        :root {
+            --cv-primary: #39A2E1;
+            --cv-primary-light: #E8F4FD;
+            --cv-bg: #F0F4F8;
+            --cv-white: #FFFFFF;
+            --cv-dark: #1a1a2e;
+            --cv-text: #4a4a4a;
+            --cv-text-light: #6b7280;
+        }
+
+        .cv-page-content {
+            background: var(--cv-bg);
+        }
+
+        /* Breadcrumb */
+        .cv-breadcrumb {
+            padding: 15px 0;
+            font-size: 14px;
+            color: var(--cv-text-light);
+            background: var(--cv-bg);
+        }
+
+        .cv-breadcrumb a {
+            color: var(--cv-text-light);
+            text-decoration: none;
+        }
+
+        .cv-breadcrumb a:hover {
+            color: var(--cv-primary);
+        }
+
+        /* Section Styles */
+        .cv-section {
+            padding: 60px 0;
+            background: var(--cv-bg);
+        }
+
+        .cv-section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .cv-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--cv-primary);
+            border-radius: 2px;
+        }
+
+        /* Two Column Layout */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Card Styles */
+        .cv-card {
+            background: var(--cv-white);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Education Card */
+        .cv-education-card {
+            padding: 25px 30px;
+        }
+
+        .cv-education-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .cv-education-card .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--cv-primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cv-education-card .icon i {
+            font-size: 24px;
+            color: var(--cv-primary);
+        }
+
+        .cv-education-card .header-text h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 3px;
+        }
+
+        .cv-education-card .header-text .school {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-primary);
+            margin: 0;
+        }
+
+        .cv-education-card .major {
+            font-size: 15px;
+            color: var(--cv-text);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cv-education-card .meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--cv-text-light);
+        }
+
+        .cv-education-card .meta .divider {
+            width: 1px;
+            height: 20px;
+            background: #ddd;
+        }
+
+        .cv-education-card .meta .icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cv-education-card .meta .icons i {
+            color: var(--cv-primary);
+            font-size: 16px;
+        }
+
+        /* Timeline */
+        .cv-timeline {
+            position: relative;
+        }
+
+        .cv-timeline-item {
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            border-left: 2px solid var(--cv-primary-light);
+        }
+
+        .cv-timeline-item:last-child {
+            padding-bottom: 0;
+            border-left-color: transparent;
+        }
+
+        .cv-timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--cv-primary);
+            border-radius: 50%;
+        }
+
+        .cv-timeline-item .date {
+            font-size: 13px;
+            color: var(--cv-primary);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .cv-timeline-item h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-timeline-item .company {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--cv-text-light);
+            margin-bottom: 15px;
+        }
+
+        .cv-timeline-item .company i {
+            color: var(--cv-primary);
+        }
+
+        .cv-timeline-item ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .cv-timeline-item ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--cv-text);
+            line-height: 1.6;
+        }
+
+        .cv-timeline-item ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--cv-primary);
+            font-weight: 600;
+        }
+
+        /* Skills Grid */
+        .cv-skills-card {
+            padding: 25px;
+        }
+
+        .cv-skills-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 20px;
+        }
+
+        .cv-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .cv-skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--cv-text);
+        }
+
+        .cv-skill-item i {
+            width: 32px;
+            height: 32px;
+            background: var(--cv-primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cv-primary);
+            font-size: 16px;
+        }
+
+        .cv-skill-item strong {
+            color: var(--cv-dark);
+        }
+
+        /* Project Card */
+        .cv-project-card {
+            background: var(--cv-white);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cv-project-card .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .cv-project-card .date {
+            font-size: 13px;
+            color: var(--cv-primary);
+            font-weight: 500;
+        }
+
+        .cv-project-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-project-card .role {
+            font-size: 14px;
+            color: var(--cv-text-light);
+            margin-bottom: 15px;
+        }
+
+        .cv-project-card .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cv-project-card .tech-tag {
+            background: var(--cv-primary-light);
+            color: var(--cv-primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .cv-project-card .description {
+            font-size: 14px;
+            color: var(--cv-text);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Footer CTA */
+        .cv-footer {
+            background: var(--cv-white);
+            padding: 40px 0;
+        }
+
+        .cv-footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cv-footer-left h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--cv-dark);
+            margin-bottom: 10px;
+        }
+
+        .cv-footer-left p {
+            font-size: 16px;
+            color: var(--cv-text);
+            margin-bottom: 20px;
+        }
+
+        .cv-footer-right {
+            background: var(--cv-primary-light);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cv-footer-right .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cv-footer-right .info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cv-dark);
+            margin-bottom: 5px;
+        }
+
+        .cv-footer-right .info .role {
+            font-size: 14px;
+            color: var(--cv-text-light);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .cv-footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .cv-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section id="home-section" class="hero">
+        <div class="home-slider owl-carousel">
+            <div class="slider-item">
+                <div class="overlay"></div>
+                <div class="container-fluid px-md-0">
+                    <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+                        data-scrollax-parent="true">
+                        <!-- Desktop Image -->
+                        <div class="one-third order-md-last img img-bg-desktop"
+                            style="background-image:url(images/bg-hero/duc.png);">
+                            <div class="overlay"></div>
+                            <div class="overlay-1"></div>
+                        </div>
+                        <!-- Mobile Image -->
+                        <div class="one-third order-md-last img img-bg-mobile"
+                            style="background-image:url(images/bg-hero/mobile/duc.png);">
+                            <div class="overlay"></div>
+                            <div class="overlay-1"></div>
+                        </div>
+                        <div class="one-forth d-flex align-items-center fadeInUp ftco-animated"
+                            data-scrollax=" properties: { translateY: '70%' }">
+                            <div class="text">
+                                <span class="subheading">Hello! I'm</span>
+                                <h1 class="mb-4 mt-3">Mai Tiến <span>Đức</span></h1>
+                                <p class="member-info"><strong>CEO & Infrastructure Engineer</strong> | VPS & Self-Hosting Specialist</p>
+                                <p>AI-assisted Development • Automation • DeviOps</p>
+                                <p>
+                                    <a href="#projects-section" class="btn btn-primary py-3 px-4">View Expertise</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Page Content -->
+    <div class="cv-page-content">
+
+        <!-- Breadcrumb -->
+        <div class="cv-breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a> &gt; Mai Tiến Đức
+            </div>
+        </div>
+
+        <!-- About Me + Education -->
+        <section class="cv-section">
+            <div class="container">
+                <div class="cv-grid">
+                    <!-- About Me -->
+                    <div>
+                        <h2 class="cv-section-title">Professional Summary</h2>
+                        <p style="color: var(--cv-text); line-height: 1.8; font-size: 15px;">
+                            Duc Mai is an Infrastructure Engineer with over 3 years of experience in building, deploying, and operating systems on VPS and self-hosting platforms.
+                            <br><br>
+                            He has a strong advantage in integrating <strong>AI-assisted development (vibe coding)</strong> to accelerate system development and deployment. Instead of relying solely on traditional coding approaches, Duc focuses on using AI (GPT) as a "co-engineer" to rapidly design, build, and optimize systems while ensuring stability and scalability.
+                            <br><br>
+                            Since October, he has transitioned to an advanced workflow using <strong>Antigravity</strong>, which helps standardize the development process, automate deployment, and minimize manual handling in system operations.
+                        </p>
+                    </div>
+
+                    <!-- Education Card (Reused as Working Approach for Đức) -->
+                    <div class="cv-card cv-education-card">
+                        <div class="cv-education-header">
+                            <div class="icon">
+                                <i class="fa fa-cogs"></i>
+                            </div>
+                            <div class="header-text">
+                                <h3>Methodology</h3>
+                                <p class="school">Working Approach</p>
+                            </div>
+                        </div>
+                        <p class="major"><strong>Focus:</strong> Fast delivery & Scalability</p>
+                        
+                        <ul style="margin: 0; padding: 0 0 0 15px; list-style: circle; color: var(--cv-text); line-height: 1.6; font-size: 14.5px;">
+                            <li style="margin-bottom: 8px;">Treating AI as an integral part of the technical workflow (not just a supplementary tool).</li>
+                            <li style="margin-bottom: 8px;">Fast delivery with lightweight and easily scalable systems.</li>
+                            <li style="margin-bottom: 8px;">Maximizing VPS cost optimization.</li>
+                            <li style="margin-bottom: 8px;">Building systems from scratch to production seamlessly.</li>
+                            <li style="margin-bottom: 8px;">Debugging directly on the server and resolving issues quickly in real-world environments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills (FULL WIDTH) + Core Expertise -->
+        <section class="cv-section" style="padding-top: 0;">
+            <div class="container">
+                <!-- Technical Skills - Full Width Card -->
+                <div class="cv-card cv-skills-card" style="margin-bottom: 40px;">
+                    <h3>Technical Stack</h3>
+                    <div class="cv-skills-grid" style="grid-template-columns: repeat(4, 1fr);">
+                        <div class="cv-skill-item">
+                            <i class="fa fa-linux"></i>
+                            <span><strong>System:</strong> Linux (Ubuntu), VPS</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-server"></i>
+                            <span><strong>Web Server:</strong> Nginx, Apache</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-database"></i>
+                            <span><strong>Panel:</strong> cPanel, aaPanel</span>
+                        </div>
+                        <div class="cv-skill-item">
+                            <i class="fa fa-docker"></i>
+                            <span><strong>DevOps:</strong> Docker, CI/CD, GitHub</span>
+                        </div>
+                        <div class="cv-skill-item" style="grid-column: span 2;">
+                            <i class="fa fa-sitemap"></i>
+                            <span><strong>Networking:</strong> Proxy, DNS, Reverse Proxy</span>
+                        </div>
+                        <div class="cv-skill-item" style="grid-column: span 2;">
+                            <i class="fa fa-magic"></i>
+                            <span><strong>Automation:</strong> Shell Script, Cronjob</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experience / Core Expertise -->
+                <h2 class="cv-section-title">Core Expertise</h2>
+                <div class="cv-timeline" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    
+                    <!-- Expertise 1 -->
+                    <div class="cv-card" style="padding: 25px;">
+                        <h4 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin: 10px 0 5px;">
+                            AI-assisted Development
+                        </h4>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cv-text-light); margin-bottom: 15px;">
+                            <i class="fa fa-rocket" style="color: var(--cv-primary);"></i> Vibe Coding
+                        </div>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Using GPT and Antigravity to accelerate the development lifecycle.
+                            </li>
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Going from rapid prototyping to a production-ready system in record time.
+                            </li>
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Optimizing coding, debugging, and deployment workflows.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Expertise 2 -->
+                    <div class="cv-card" style="padding: 25px;">
+                        <h4 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin: 10px 0 5px;">
+                            VPS & Infrastructure
+                        </h4>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cv-text-light); margin-bottom: 15px;">
+                            <i class="fa fa-server" style="color: var(--cv-primary);"></i> Self-hosting & Deployment
+                        </div>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Deploying and managing systems on VPS (Linux - Ubuntu).
+                            </li>
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Deploying web apps and services on VPS (manually and via Docker).
+                            </li>
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Setting up independent self-hosted systems: Reverse proxy, domains, SSL, DNS.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Expertise 3 -->
+                    <div class="cv-card" style="padding: 25px;">
+                        <h4 style="font-size: 18px; font-weight: 600; color: var(--cv-dark); margin: 10px 0 5px;">
+                            DevOps & Automation
+                        </h4>
+                        <div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--cv-text-light); margin-bottom: 15px;">
+                            <i class="fa fa-cogs" style="color: var(--cv-primary);"></i> Proxy & Network Systems
+                        </div>
+                        <ul style="margin: 0; padding: 0; list-style: none;">
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Setting up basic CI/CD (auto-deploy from repositories via GitHub workflows).
+                            </li>
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Building automated account activation flows (email, OTP, etc.).
+                            </li>
+                            <li style="position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: var(--cv-text); line-height: 1.5;">
+                                <span style="position: absolute; left: 0; color: var(--cv-primary);">✓</span>
+                                Configuring and managing VPS proxies, advanced routing, and IP distribution.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Direction Section -->
+        <section class="cv-section" id="projects-section" style="padding-top: 0;">
+            <div class="container">
+                <h2 class="cv-section-title">Career Direction</h2>
+                <div class="cv-project-card" style="margin-bottom: 0;">
+                    <div class="header">
+                        <div>
+                            <h4>Goals & Orientation</h4>
+                            <p class="role">Senior DevOps / Infrastructure Engineer</p>
+                        </div>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AI-driven</span>
+                        <span class="tech-tag">Large-scale Self-hosting</span>
+                        <span class="tech-tag">Cost Optimization</span>
+                        <span class="tech-tag">Full Automation</span>
+                    </div>
+                    <p class="description">
+                        Aiming to become a Senior DevOps / Infrastructure Engineer, focusing on: <br>
+                        - Building robust <strong>AI-driven development workflows</strong>.<br>
+                        - Developing large-scale self-hosted systems while ensuring high stability.<br>
+                        - Proposing technical solutions that combine minimal overhead with <strong>maximum infrastructure cost optimization</strong>.<br>
+                        - Implementing comprehensive automation from CI/CD to infrastructure management.<br>
+                        - Continuously researching and building independent systems without relying on third-party platforms.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Call-to-action -->
+        <footer class="cv-footer">
+            <div class="container">
+                <div class="cv-footer-content">
+                    <div class="cv-footer-left">
+                        <h2>Ready to collaborate?</h2>
+                        <p>Let's discuss how we can build something great together.</p>
+                        <a href="index.html#contact-section" class="btn btn-primary py-3 px-4">Contact the team</a>
+                    </div>
+                    
+                    <div class="cv-footer-right">
+                        <img src="images/bg-hero/duc.png" alt="Mai Tiến Đức" class="avatar">
+                        <div>
+                            <div class="info">
+                                <h4>Mai Tiến Đức</h4>
+                                <div class="role">CEO & Infrastructure Engineer</div>
+                            </div>
+                            <div class="contacts">
+                                <!-- Placeholders for individual contacts if needed -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Load header matching exact styles
+            $("#header-placeholder").load("includes/header.html", function () {
+                // ... same load logic
+            });
+            
+            // ... Any additional JS to initialize
+        });
+    </script>
+</body>
+
+</html>

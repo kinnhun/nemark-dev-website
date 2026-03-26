@@ -30,31 +30,17 @@
     },
     {
       "id": 3,
-      "name": "Đào Huy Toàn",
-      "role": "Fullstack Developer",
-      "specialty": "Django & DevOps",
-      "subheading": "Scalable Backend Systems",
-      "headline": "Hi, I'm <span>Toàn</span> Building robust web apps",
-      "image": "images/bg-hero/toan.png",
-      "mobileImage": "images/bg-hero/mobile/toan.png",
+      "name": "Mai Tiến Đức",
+      "role": "CEO & Infrastructure Engineer",
+      "specialty": "VPS & Self-Hosting",
+      "subheading": "AI-assisted Infrastructure",
+      "headline": "Hi, I'm <span>Đức</span> System Engineer",
+      "image": "images/bg-hero/duc.png",
+      "mobileImage": "images/bg-hero/mobile/duc.png",
       "ctaHire": "View Portfolio",
-      "portfolioLink": "dao-huy-toan.html",
+      "portfolioLink": "mai-tien-duc.html",
       "ctaCV": "Download CV",
-      "cvFile": "cv/dao_huy_toan_nemark.pdf"
-    },
-    {
-      "id": 4,
-      "name": "Nguyễn Quang Huy",
-      "role": "Game Developer",
-      "specialty": "Unity & VR Development",
-      "subheading": "Creative Game Solutions",
-      "headline": "Hi, I'm <span>Huy</span> Crafting immersive games",
-      "image": "images/bg-hero/huy.png",
-      "mobileImage": "images/bg-hero/mobile/huy.png",
-      "ctaHire": "View Portfolio",
-      "portfolioLink": "nguyen-quang-huy.html",
-      "ctaCV": "Download CV",
-      "cvFile": "cv/nguyen_quang_huy_nemark.pdf"
+      "cvFile": "#"
     }
   ]
 }
