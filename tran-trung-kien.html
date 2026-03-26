@@ -270,8 +270,24 @@
 
         .cv-skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
+        }
+
+        .cv-timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .cv-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .cv-skill-full {
+            grid-column: 1 / -1;
         }
 
         .cv-skill-item {
@@ -306,6 +322,7 @@
             padding-top: 15px;
             border-top: 1px solid #eee;
             font-size: 14px;
+            flex-wrap: wrap;
         }
 
         .cv-github-link i {
@@ -502,6 +519,16 @@
             color: var(--cv-primary);
         }
 
+        @media (max-width: 992px) {
+            .cv-skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cv-timeline-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .cv-footer-content {
                 flex-direction: column;
@@ -510,7 +537,49 @@
             }
 
             .cv-skills-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+            }
+
+            .cv-timeline-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .cv-projects-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .cv-education-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .cv-education-card .meta {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .cv-education-card .meta .divider {
+                display: none;
+            }
+
+            .cv-section-title {
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .cv-card {
+                padding: 20px;
+            }
+
+            .cv-footer-right {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cv-github-link {
+                justify-content: center;
             }
         }
     </style>
@@ -616,7 +685,7 @@
                 <!-- Technical Skills - Full Width Card -->
                 <div class="cv-card cv-skills-card" style="margin-bottom: 40px;">
                     <h3>Technical Skills</h3>
-                    <div class="cv-skills-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="cv-skills-grid">
                         <div class="cv-skill-item">
                             <i class="fa fa-code"></i>
                             <span><strong>Languages:</strong> JavaScript (ES6+), TypeScript, Java, C#, SQL</span>
@@ -634,7 +703,7 @@
                             <i class="fa fa-database"></i>
                             <span><strong>Databases:</strong> MongoDB, MySQL/SQL Server, NoSQL</span>
                         </div>
-                        <div class="cv-skill-item" style="grid-column: span 4;">
+                        <div class="cv-skill-item cv-skill-full">
                             <i class="fa fa-cogs"></i>
                             <span><strong>Other:</strong> Design & integrate RESTful APIs, Cypress (automation testing),
                                 unit testing, Git, CI/CD</span>
@@ -652,7 +721,7 @@
 
                 <!-- Work Experience - Full Width Timeline -->
                 <h2 class="cv-section-title">Work Experience</h2>
-                <div class="cv-timeline" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="cv-timeline cv-timeline-grid">
                     <!-- Nemark -->
                     <div class="cv-card" style="padding: 25px;">
                         <span class="date"
@@ -765,7 +834,7 @@
         <section class="cv-section" id="projects-section" style="padding-top: 0;">
             <div class="container">
                 <h2 class="cv-section-title">Projects</h2>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 40px;">
+                <div class="cv-projects-grid" style="margin-bottom: 40px;">
                     <!-- HGS -->
                     <div class="cv-project-card" style="margin-bottom: 0;">
                         <div class="header">

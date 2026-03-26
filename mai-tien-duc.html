@@ -265,8 +265,18 @@
 
         .cv-skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
+        }
+
+        .cv-timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .cv-skill-full {
+            grid-column: 1 / -1;
         }
 
         .cv-skill-item {
@@ -404,6 +414,16 @@
             margin-bottom: 10px;
         }
 
+        @media (max-width: 992px) {
+            .cv-skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cv-timeline-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .cv-footer-content {
                 flex-direction: column;
@@ -412,7 +432,40 @@
             }
 
             .cv-skills-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+            }
+
+            .cv-timeline-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .cv-education-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .cv-section-title {
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .cv-card {
+                padding: 20px;
+            }
+
+            .cv-education-card .major {
+                text-align: center;
+            }
+
+            .cv-education-card ul {
+                padding-left: 20px !important;
+                text-align: left;
+            }
+
+            .cv-footer-right {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -449,7 +502,7 @@
                                 <span class="subheading">Hello! I'm</span>
                                 <h1 class="mb-4 mt-3">Mai Tiến <span>Đức</span></h1>
                                 <p class="member-info"><strong>CEO & Infrastructure Engineer</strong> | VPS & Self-Hosting Specialist</p>
-                                <p>AI-assisted Development • Automation • DeviOps</p>
+                                <p>AI-assisted Development • Automation • DevOps</p>
                                 <p>
                                     <a href="#projects-section" class="btn btn-primary py-3 px-4">View Expertise</a>
                                 </p>
@@ -518,7 +571,7 @@
                 <!-- Technical Skills - Full Width Card -->
                 <div class="cv-card cv-skills-card" style="margin-bottom: 40px;">
                     <h3>Technical Stack</h3>
-                    <div class="cv-skills-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="cv-skills-grid">
                         <div class="cv-skill-item">
                             <i class="fa fa-linux"></i>
                             <span><strong>System:</strong> Linux (Ubuntu), VPS</span>
@@ -535,11 +588,11 @@
                             <i class="fa fa-docker"></i>
                             <span><strong>DevOps:</strong> Docker, CI/CD, GitHub</span>
                         </div>
-                        <div class="cv-skill-item" style="grid-column: span 2;">
+                        <div class="cv-skill-item cv-skill-full">
                             <i class="fa fa-sitemap"></i>
                             <span><strong>Networking:</strong> Proxy, DNS, Reverse Proxy</span>
                         </div>
-                        <div class="cv-skill-item" style="grid-column: span 2;">
+                        <div class="cv-skill-item cv-skill-full">
                             <i class="fa fa-magic"></i>
                             <span><strong>Automation:</strong> Shell Script, Cronjob</span>
                         </div>
@@ -548,7 +601,7 @@
 
                 <!-- Work Experience / Core Expertise -->
                 <h2 class="cv-section-title">Core Expertise</h2>
-                <div class="cv-timeline" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="cv-timeline cv-timeline-grid">
                     
                     <!-- Expertise 1 -->
                     <div class="cv-card" style="padding: 25px;">

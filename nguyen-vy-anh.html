@@ -270,8 +270,18 @@
 
         .cv-skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
+        }
+
+        .cv-timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .cv-skill-full {
+            grid-column: 1 / -1;
         }
 
         .cv-skill-item {
@@ -503,6 +513,16 @@
             color: var(--cv-primary);
         }
 
+        @media (max-width: 992px) {
+            .cv-skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cv-timeline-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .cv-footer-content {
                 flex-direction: column;
@@ -511,7 +531,41 @@
             }
 
             .cv-skills-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+            }
+
+            .cv-timeline-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .cv-education-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .cv-education-card .meta {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .cv-education-card .meta .divider {
+                display: none;
+            }
+
+            .cv-section-title {
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .cv-card {
+                padding: 20px;
+            }
+
+            .cv-footer-right {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -664,7 +718,7 @@
             <div class="container">
                 <div class="cv-card cv-skills-card" style="margin-bottom: 40px;">
                     <h3>Technical Skills</h3>
-                    <div class="cv-skills-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="cv-skills-grid">
                         <div class="cv-skill-item">
                             <i class="fa fa-tasks"></i>
                             <span><strong>Jira</strong> (Bug Tracking)</span>
@@ -792,16 +846,15 @@
                             Takeaways:
                         </h5>
                         <ul style="margin: 0; padding: 0; list-style: none; font-size: 13px;">
-                            <li style="margin-bottom: 4px; color: var(--cv-text);">• Gained strong understanding of
-                                requirement interpretation</li>
                             <li style="margin-bottom: 0; color: var(--cv-text);">• Improved communication between QA,
                                 BA, and development teams</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Projects Grid -->
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px;">
+                <!-- Work Experience - Full Width Timeline -->
+                <h2 class="cv-section-title">Work Experience</h2>
+                <div class="cv-timeline cv-timeline-grid">
                     <!-- Billiard Branch Management -->
                     <div class="cv-project-card" style="margin-bottom: 0;">
                         <div class="header">
